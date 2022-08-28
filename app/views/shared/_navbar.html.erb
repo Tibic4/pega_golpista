@@ -1,0 +1,27 @@
+<div style='height: 45px; background-color:  #012a4a;'></div>
+<nav class="navbar navbar-expand-lg navbar-white bg-white static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <%= image_tag "logo.svg", alt: "alttext", class: "logo" %>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <%= link_to "REPORTAR", pages_reporting_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "TIPO DE FRAUDES", pages_types_of_fraud_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "PREVENÇÃO", pages_prevention_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "SOBRE NÓS", pages_about_us_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
