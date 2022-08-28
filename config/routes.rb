@@ -2,7 +2,6 @@
 
 Rails.application.routes.draw do
   root 'pages#home'
-  get 'pages/home'
   get 'pages/reporting'
   get 'pages/types_of_fraud'
   get 'pages/prevention'
