@@ -30,7 +30,10 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        Zone.create(task_id: @task.id, ddd: set_ddd, count: +1)
+        # Save count in ddd table
+        Zone.find_by(ddd: set_ddd).increment!(:count)
+
+        # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
       else
