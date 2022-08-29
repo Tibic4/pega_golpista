@@ -1,3 +1,4 @@
+require "json"
 require "open-uri"
 
 class TasksController < ApplicationController
@@ -14,6 +15,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
+    # @ddd = Zone.find_by(ddd: set_ddd)
+    # @zone = zone.find(params[:id])
     @task = Task.new
   end
 
@@ -64,9 +67,11 @@ class TasksController < ApplicationController
 
   # def set ddd by cep
   def set_ddd
-    url = "viacep.com.br/ws/#{params[:cep]}/json/"
-    @ddds = JSON.parse(open(url).read)
-    @ddd = @ddds.find { |ddd| ddd["ddd"] == params[:ddd] }
+    url = "https://viacep.com.br/ws/#{params[:task][:cep]}/json/"
+    ddds = URI.open(url).read
+    dddi = JSON.parse(ddds)
+    hash = dddi.select { |ddd| ddd["ddd"] }
+    @ddd = hash["ddd"].to_i
   end
 
   private
@@ -80,6 +85,4 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:date, :scam_type, :cep, :money_lost)
   end
-
-
 end
