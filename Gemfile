@@ -36,6 +36,12 @@ gem "kaminari"
 # Use i18n for internationalization and localization [
 gem "i18n"
 
+#  Use Faker for fake data
+gem "faker"
+
+# Use cep_brasil for brazilian zip code
+gem "cep_brasil"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

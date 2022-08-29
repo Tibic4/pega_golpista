@@ -27,6 +27,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
+        Zone.create(task_id: @task.id, ddd: set_ddd, count: +1)
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
       else
@@ -38,6 +39,7 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
+    # Only for admins
     # respond_to do |format|
     #   if @task.update(task_params)
     #     format.html { redirect_to task_url(@task), notice: "Task was successfully updated." }
@@ -51,12 +53,20 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1 or /tasks/1.json
   def destroy
+    # Only for admins
     # @task.destroy
 
     # respond_to do |format|
     #   format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
     #   format.json { head :no_content }
     # end
+  end
+
+  # def set ddd by cep
+  def set_ddd
+    url = "viacep.com.br/ws/#{params[:cep]}/json/"
+    @ddds = JSON.parse(open(url).read)
+    @ddd = @ddds.find { |ddd| ddd["ddd"] == params[:ddd] }
   end
 
   private
@@ -70,4 +80,6 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:date, :scam_type, :cep, :money_lost)
   end
+
+
 end
