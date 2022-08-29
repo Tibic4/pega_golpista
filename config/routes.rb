@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :tasks
   root 'pages#home'
   get 'pages/reporting'
   get 'pages/types_of_fraud'
