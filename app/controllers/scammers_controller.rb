@@ -1,0 +1,2 @@
+class ScammersController < ApplicationController
+end

@@ -10,13 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_113607) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_121958) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "scammers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.integer "phone"
+    t.string "website"
+    t.text "description"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_scammers_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -28,4 +40,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_113607) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "zones", force: :cascade do |t|
+    t.integer "ddd"
+    t.string "region"
+    t.float "lat"
+    t.float "long"
+    t.integer "count"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_zones_on_task_id"
+  end
+
+  add_foreign_key "scammers", "tasks"
+  add_foreign_key "zones", "tasks"
 end
