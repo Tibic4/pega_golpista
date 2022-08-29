@@ -42,6 +42,9 @@ gem "i18n"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+# Use openuri to fetch data from the web [https://ruby-doc.org/stdlib-3.0.2/libdoc/open-uri/rdoc/OpenURI.html]
+gem "open-uri"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
