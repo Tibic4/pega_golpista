@@ -2,9 +2,19 @@
   
 }
 
-
+.nav-list{
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: -1;
+}
 .nav-link {
   font-family: "Nunito", sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.navbar-fixed{
+  background-color: #08528fc0;
 }
