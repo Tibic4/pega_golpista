@@ -1,23 +1,23 @@
 <%# Show scammers details %>
-<div id="<%= dom_id task %>">
+<div id="<%= dom_id @scammer %>">
   <p>
     <strong>Name</strong>
-    <%= task.scammer.name %>
+    <%= @scammer.name %>
   </p>
   <p>
     <strong>Email</strong>
-    <%= task.scammer.email %>
+    <%=@scammer.email %>
   </p>
   <p>
     <strong>Phone</strong>
-    <%= task.scammer.phone %>
+    <%= @scammer.phone %>
   </p>
   <p>
     <strong>Website</strong>
-    <%= task.scammer.website %>
+    <%= @scammer.website %>
   </p>
   <p>
     <strong>Description</strong>
-    <%= task.scammer.description %>
+    <%= @scammer.description %>
   </p>
 </div>

@@ -16,8 +16,11 @@
         <td><%= task.scam_type %></td>
         <td><%= task.cep %></td>
         <td><%= task.money_lost %></td>
-        <td><%= link_to 'Details', task_path(task) %></td>
-        <%# <td><%= link_to "Show", task_scammer_path(task) %></td> %>
+        <% if task.scammers.empty? %>
+          <td></td>
+        <% else %>
+        <td><%= link_to "Show", task_scammer_path(task_id: task, id:task.scammers.first.id) %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
