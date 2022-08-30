@@ -32,6 +32,8 @@ gem "jbuilder"
 
 # Use Kaminari for pagination
 gem "kaminari"
+gem "kaminari-i18n"
+gem 'bootstrap5-kaminari-views'
 
 # Use i18n for internationalization and localization [
 gem "i18n"
