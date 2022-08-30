@@ -33,6 +33,7 @@ class TasksController < ApplicationController
         @scammer = Scammer.new(scammer_params[:scammer])
         @scammer.task_id = @task.id
         @scammer.save
+
         # Save count in ddd table
         Zone.find_by(ddd: set_ddd).increment!(:count)
         # end
