@@ -1,3 +1,4 @@
+require "json"
 require "open-uri"
 
 class TasksController < ApplicationController
@@ -14,6 +15,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
+    # @ddd = Zone.find_by(ddd: set_ddd)
+    # @zone = zone.find(params[:id])
     @task = Task.new
   end
 
@@ -27,7 +30,10 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        Zone.create(task_id: @task.id, ddd: set_ddd, count: +1)
+        # Save count in ddd table
+        Zone.find_by(ddd: set_ddd).increment!(:count)
+
+        # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
       else
@@ -64,9 +70,11 @@ class TasksController < ApplicationController
 
   # def set ddd by cep
   def set_ddd
-    url = "viacep.com.br/ws/#{params[:cep]}/json/"
-    @ddds = JSON.parse(open(url).read)
-    @ddd = @ddds.find { |ddd| ddd["ddd"] == params[:ddd] }
+    url = "https://viacep.com.br/ws/#{params[:task][:cep]}/json/"
+    ddds = URI.open(url).read
+    dddi = JSON.parse(ddds)
+    hash = dddi.select { |ddd| ddd["ddd"] }
+    @ddd = hash["ddd"].to_i
   end
 
   private
@@ -80,6 +88,4 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:date, :scam_type, :cep, :money_lost)
   end
-
-
 end
