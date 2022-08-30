@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/types_of_fraud'
   get 'pages/prevention'
   get 'pages/about_us'
+  get 'pages/map'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

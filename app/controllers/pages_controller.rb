@@ -11,4 +11,6 @@ class PagesController < ApplicationController
   def prevention; end
 
   def about_us; end
+
+  def map; end
 end
