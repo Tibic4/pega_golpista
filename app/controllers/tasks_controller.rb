@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.all.page(params[:page]).per(10)
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -15,9 +15,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    # @ddd = Zone.find_by(ddd: set_ddd)
-    # @zone = zone.find(params[:id])
     @task = Task.new
+    @task.scammers.build
   end
 
   # GET /tasks/1/edit
@@ -27,11 +26,16 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-
     respond_to do |format|
       if @task.save
+
+        # Save nested form scammer data
+        @scammer = Scammer.new(scammer_params[:scammer])
+        @scammer.task_id = @task.id
+        @scammer.save
         # Save count in ddd table
         Zone.find_by(ddd: set_ddd).increment!(:count)
+        # end
 
         # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
         format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
@@ -86,6 +90,10 @@ class TasksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def task_params
-    params.require(:task).permit(:date, :scam_type, :cep, :money_lost)
+    params.require(:task).permit(:date, :scam_type, :cep, :money_lost, :description)
+  end
+
+  def scammer_params
+    params.require(:task).permit(scammer: %i[name phone email website description category])
   end
 end

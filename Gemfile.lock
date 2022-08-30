@@ -81,6 +81,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
+    bootstrap5-kaminari-views (0.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -136,6 +139,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    kaminari-i18n (0.5.0)
+      kaminari
+      rails
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -267,6 +273,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  bootstrap5-kaminari-views
   capybara
   cep_brasil
   debug
@@ -278,6 +285,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   kaminari
+  kaminari-i18n
   open-uri
   pg (~> 1.1)
   puma (~> 5.0)
