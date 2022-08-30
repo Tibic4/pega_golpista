@@ -10,6 +10,17 @@
     <%= f.input :money_lost %>
   </div>
 
+  <%# Simple fields for :scammer %>
+  <div class="form-inputs">
+    <%= f.simple_fields_for :scammer do |scammer| %>
+      <%= scammer.input :name, label: "Nome Usado pelo golpista" %>
+      <%= scammer.input :email, label: "Email Usado pelo golpista" %>
+      <%= scammer.input :phone, label: "Telefone Usado pelo golpista" %>
+      <%= scammer.input :website, label: "Site onde ocorreu golpe" %>
+      <%= scammer.input :description, label: "Descrição do golpe" %>
+    <% end %>
+
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>

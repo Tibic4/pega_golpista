@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    resources :scammers, only: %i[new create show]
+  end
   root 'pages#home'
   get 'pages/reporting'
   get 'pages/types_of_fraud'
