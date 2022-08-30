@@ -1,0 +1,31 @@
+
+<table class="table">
+  <thead class="bg-primary text-white">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Scam type</th>
+      <th scope="col">CEP</th>
+      <th scope="col">Money Lost</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% tasks.each do |task| %>
+      <tr>
+        <td><%= task.date %></td>
+        <td><%= task.scam_type %></td>
+        <td><%= task.cep %></td>
+        <td><%= task.money_lost %></td>
+        <% if task.scammers.empty? %>
+          <td></td>
+        <% else %>
+        <td><%= link_to "Show", task_scammer_path(task_id: task, id:task.scammers.first.id) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%# Align paginate in the center %>
+<div class="d-flex justify-content-center">
+  <%= paginate tasks, theme: 'bootstrap-5' %>
+</div>
