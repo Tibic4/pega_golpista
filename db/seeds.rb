@@ -79,72 +79,72 @@ zone.save
 zone = Zone.new
 zone.ddd = 11
 zone.region = "São Paulo"
-zone.long = -46.63952
-zone.lat =  -23.532905
+zone.longitude = -46.63952
+zone.latitude =  -23.532905
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 12
 zone.region = "São José dos Campos"
-zone.long = -45.884115
-zone.lat = -23.189554
+zone.longitude = -45.884115
+zone.latitude = -23.189554
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 13
 zone.region = "Santos"
-zone.long = -46.335042
-zone.lat =  -23.953543
+zone.longitude = -46.335042
+zone.latitude =  -23.953543
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 14
 zone.region = "Bauru"
-zone.long = -49.087142
-zone.lat = -22.324569
+zone.longitude = -49.087142
+zone.latitude = -22.324569
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 15
 zone.region = "Sorocaba"
-zone.long = -47.445073
-zone.lat =  -23.496886
+zone.longitude = -47.445073
+zone.latitude =  -23.496886
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 16
 zone.region = "Ribeirão Preto"
-zone.long = -47.809875
-zone.lat = -21.169923
+zone.longitude = -47.809875
+zone.latitude = -21.169923
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 17
 zone.region = "São José do Rio Preto"
-zone.long = -49.375767
-zone.lat =  -20.811289
+zone.longitude = -49.375767
+zone.latitude =  -20.811289
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 18
 zone.region = "Presidente Prudente"
-zone.long = -51.392526
-zone.lat = -22.120654
+zone.longitude = -51.392526
+zone.latitude = -22.120654
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 19
 zone.region = "Campinas"
-zone.long = -47.06595
-zone.lat =  -22.905346
+zone.longitude = -47.06595
+zone.latitude =  -22.905346
 zone.task_id = rand(1..10)
 zone.save
 
@@ -157,16 +157,16 @@ zone.save
 zone = Zone.new
 zone.ddd = 21
 zone.region = "Rio de Janeiro"
-zone.long = -43.200295
-zone.lat =  -22.912897
+zone.longitude = -43.200295
+zone.latitude =  -22.912897
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 22
 zone.region = "Campos dos Goytacazes"
-zone.long = -41.318055
-zone.lat = -21.762171
+zone.longitude = -41.318055
+zone.latitude = -21.762171
 zone.task_id = rand(1..10)
 zone.save
 
@@ -179,8 +179,8 @@ zone.save
 zone = Zone.new
 zone.ddd = 24
 zone.region = "Petrópolis"
-zone.long = -43.192613
-zone.lat = -22.519963
+zone.longitude = -43.192613
+zone.latitude = -22.519963
 zone.task_id = rand(1..10)
 zone.save
 
@@ -205,16 +205,16 @@ zone.save
 zone = Zone.new
 zone.ddd = 27
 zone.region = "Vitória"
-zone.long = -40.312806
-zone.lat = -20.315472
+zone.longitude = -40.312806
+zone.latitude = -20.315472
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 28
 zone.region = "Cachoeiro de Itapemirim"
-zone.long = -41.119829
-zone.lat =  -20.846212
+zone.longitude = -41.119829
+zone.latitude =  -20.846212
 zone.task_id = rand(1..10)
 zone.save
 
@@ -233,40 +233,40 @@ zone.save
 zone = Zone.new
 zone.ddd = 31
 zone.region = "Belo Horizonte"
-zone.long = -43.926572
-zone.lat = -19.910183
+zone.longitude = -43.926572
+zone.latitude = -19.910183
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 32
 zone.region = "Juiz de Fora"
-zone.long = -43.339759
-zone.lat =  -21.75952
+zone.longitude = -43.339759
+zone.latitude =  -21.75952
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 33
 zone.region = "Gorvernador Valadares"
-zone.long = -41.95553
-zone.lat = 18.854452
+zone.longitude = -41.95553
+zone.latitude = 18.854452
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 34
 zone.region = "Uberlândia"
-zone.long = -48.274934
-zone.lat = -18.914142
+zone.longitude = -48.274934
+zone.latitude = -18.914142
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 35
 zone.region = "Poços de Caldas"
-zone.long = -46.569184
-zone.lat = -21.779975
+zone.longitude = -46.569184
+zone.latitude = -21.779975
 zone.task_id = rand(1..10)
 zone.save
 
@@ -279,16 +279,16 @@ zone.save
 zone = Zone.new
 zone.ddd = 37
 zone.region = "Divinópolis"
-zone.long = -44.891223
-zone.lat =  -20.144646
+zone.longitude = -44.891223
+zone.latitude =  -20.144646
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 38
 zone.region = "Montes Claros"
-zone.long = -43.857809
-zone.lat = -16.728177
+zone.longitude = -43.857809
+zone.latitude = -16.728177
 zone.task_id = rand(1..10)
 zone.save
 
@@ -307,72 +307,72 @@ zone.save
 zone = Zone.new
 zone.ddd = 41
 zone.region = "Coritiba"
-zone.long = -49.276855
-zone.lat = -25.441105
+zone.longitude = -49.276855
+zone.latitude = -25.441105
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 42
 zone.region = "Ponta Grossa"
-zone.long = -50.166787
-zone.lat = -25.091622
+zone.longitude = -50.166787
+zone.latitude = -25.091622
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 43
 zone.region = "Londrina"
-zone.long = -51.1691
-zone.lat = -23.303975
+zone.longitude = -51.1691
+zone.latitude = -23.303975
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 44
 zone.region = "Maringá"
-zone.long = -51.933298
-zone.lat = -23.420545
+zone.longitude = -51.933298
+zone.latitude = -23.420545
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 45
 zone.region = "Cascavel"
-zone.long = -53.459005
-zone.lat = -24.957301
+zone.longitude = -53.459005
+zone.latitude = -24.957301
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 46
 zone.region = "Francisco Beltrão"
-zone.long = -53.053466
-zone.lat = -26.081677
+zone.longitude = -53.053466
+zone.latitude = -26.081677
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 47
 zone.region = "Joinville"
-zone.long = -48.843380
-zone.lat = -26.304516
+zone.longitude = -48.843380
+zone.latitude = -26.304516
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 48
 zone.region = "Florianópolis"
-zone.long = -48.547696
-zone.lat = -27.594486
+zone.longitude = -48.547696
+zone.latitude = -27.594486
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 49
 zone.region = "Chapecó"
-zone.long = -52.61519
-zone.lat = -27.100448
+zone.longitude = -52.61519
+zone.latitude = -27.100448
 zone.task_id = rand(1..10)
 zone.save
 
@@ -385,8 +385,8 @@ zone.save
 zone = Zone.new
 zone.ddd = 51
 zone.region = "Porto Alegre"
-zone.long = -51.206533
-zone.lat = -30.031771
+zone.longitude = -51.206533
+zone.latitude = -30.031771
 zone.task_id = rand(1..10)
 zone.save
 
@@ -399,24 +399,24 @@ zone.save
 zone = Zone.new
 zone.ddd = 53
 zone.region = "Pelotas"
-zone.long = -52.337058
-zone.lat = -31.764898
+zone.longitude = -52.337058
+zone.latitude = -31.764898
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 54
 zone.region = "Caxias do Sul"
-zone.long = -51.179161
-zone.lat = -29.162905
+zone.longitude = -51.179161
+zone.latitude = -29.162905
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 55
 zone.region = "Santa Maria"
-zone.long = -53.814946
-zone.lat = -29.686817
+zone.longitude = -53.814946
+zone.latitude = -29.686817
 zone.task_id = rand(1..10)
 zone.save
 
@@ -453,72 +453,72 @@ zone.save
 zone = Zone.new
 zone.ddd = 61
 zone.region = "Distrito Federal"
-zone.long = -47.9292
-zone.lat =  -15.7801
+zone.longitude = -47.9292
+zone.latitude =  -15.7801
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 62
 zone.region = "Goiania"
-zone.long = -49.264346
-zone.lat = -16.686439
+zone.longitude = -49.264346
+zone.latitude = -16.686439
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 63
 zone.region = "Palmas"
-zone.long = -48.355751
-zone.lat = -10.239973
+zone.longitude = -48.355751
+zone.latitude = -10.239973
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 64
 zone.region = "Rio Verde"
-zone.long = -50.919195
-zone.lat = -17.792266
+zone.longitude = -50.919195
+zone.latitude = -17.792266
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 65
 zone.region = "Cuiabá"
-zone.long = -56.097397
-zone.lat = -15.600979
+zone.longitude = -56.097397
+zone.latitude = -15.600979
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 66
 zone.region = "Rondonopolis"
-zone.long = -54.637173
-zone.lat = -16.467251
+zone.longitude = -54.637173
+zone.latitude = -16.467251
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 67
 zone.region = "Campo Grande"
-zone.long = -54.629463
-zone.lat = -20.448589
+zone.longitude = -54.629463
+zone.latitude = -20.448589
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 68
 zone.region = "Rio Branco"
-zone.long = -67.824348
-zone.lat = -9.97499
+zone.longitude = -67.824348
+zone.latitude = -9.97499
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 69
 zone.region = "Porto Velho"
-zone.long = -63.899902
-zone.lat = -8.760772
+zone.longitude = -63.899902
+zone.latitude = -8.760772
 zone.task_id = rand(1..10)
 zone.save
 
@@ -531,8 +531,8 @@ zone.save
 zone = Zone.new
 zone.ddd = 71
 zone.region = "Salvador"
-zone.long = -38.501068
-zone.lat = -12.97178
+zone.longitude = -38.501068
+zone.latitude = -12.97178
 zone.task_id = rand(1..10)
 zone.save
 
@@ -545,24 +545,24 @@ zone.save
 zone = Zone.new
 zone.ddd = 73
 zone.region = "Itabuna"
-zone.long = -39.278056
-zone.lat = -14.787573
+zone.longitude = -39.278056
+zone.latitude = -14.787573
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 74
 zone.region = "Juazeiro"
-zone.long = -40.503251
-zone.lat = -9.416217
+zone.longitude = -40.503251
+zone.latitude = -9.416217
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 75
 zone.region = "Feira de Santana"
-zone.long = -38.966293
-zone.lat = -12.266429
+zone.longitude = -38.966293
+zone.latitude = -12.266429
 zone.task_id = rand(1..10)
 zone.save
 
@@ -575,8 +575,8 @@ zone.save
 zone = Zone.new
 zone.ddd = 77
 zone.region = "Vitória da Conquista"
-zone.long = -40.844159
-zone.lat = -14.861466
+zone.longitude = -40.844159
+zone.latitude = -14.861466
 zone.task_id = rand(1..10)
 zone.save
 
@@ -589,8 +589,8 @@ zone.save
 zone = Zone.new
 zone.ddd = 79
 zone.region = "Aracaju"
-zone.long = -37.06766
-zone.lat = -10.909133
+zone.longitude = -37.06766
+zone.latitude = -10.909133
 zone.task_id = rand(1..10)
 zone.save
 
@@ -603,72 +603,72 @@ zone.save
 zone = Zone.new
 zone.ddd = 81
 zone.region = "Recife"
-zone.long = -34.877065
-zone.lat = -8.046658
+zone.longitude = -34.877065
+zone.latitude = -8.046658
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 82
 zone.region = "Maceió"
-zone.long = -35.73496
-zone.lat = -9.665985
+zone.longitude = -35.73496
+zone.latitude = -9.665985
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 83
 zone.region = "João Pessoa"
-zone.long = -34.864121
-zone.lat = -7.11509
+zone.longitude = -34.864121
+zone.latitude = -7.11509
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 84
 zone.region = "Natal"
-zone.long = -35.198604
-zone.lat = -5.793567
+zone.longitude = -35.198604
+zone.latitude = -5.793567
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 85
 zone.region = "Fortaleza"
-zone.long = -38.542298
-zone.lat = -3.716638
+zone.longitude = -38.542298
+zone.latitude = -3.716638
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 86
 zone.region = "Teresina"
-zone.long = -42.803364
-zone.lat = -5.091944
+zone.longitude = -42.803364
+zone.latitude = -5.091944
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 87
 zone.region = "Petrolina"
-zone.long = -40.502731
-zone.lat = -9.388662
+zone.longitude = -40.502731
+zone.latitude = -9.388662
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 88
 zone.region = "Juazeiro do Norte"
-zone.long = -39.307593
-zone.lat = -7.196207
+zone.longitude = -39.307593
+zone.latitude = -7.196207
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 89
 zone.region = "Picos"
-zone.long = -41.467003
-zone.lat = -7.077213
+zone.longitude = -41.467003
+zone.latitude = -7.077213
 zone.task_id = rand(1..10)
 zone.save
 
@@ -682,32 +682,32 @@ zone.save
 zone = Zone.new
 zone.ddd = 91
 zone.region = "Belém"
-zone.long = -48.489756
-zone.lat = -1.455396
+zone.longitude = -48.489756
+zone.latitude = -1.455396
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 92
 zone.region = "Manaus"
-zone.long = -60.02123
-zone.lat = -3.118662
+zone.longitude = -60.02123
+zone.latitude = -3.118662
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 93
 zone.region = "Santarém"
-zone.long = -54.699611
-zone.lat = -2.438489
+zone.longitude = -54.699611
+zone.latitude = -2.438489
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 94
 zone.region = "Marabá"
-zone.long = -49.132672
-zone.lat = -5.38075
+zone.longitude = -49.132672
+zone.latitude = -5.38075
 zone.task_id = rand(1..10)
 zone.save
 
@@ -715,40 +715,40 @@ zone.save
 zone = Zone.new
 zone.ddd = 95
 zone.region = "Boa Vista"
-zone.long = -60.675328
-zone.lat = 2.823842
+zone.longitude = -60.675328
+zone.latitude = 2.823842
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 96
 zone.region = "Macapá"
-zone.long = -51.06939
-zone.lat = 0.034934
+zone.longitude = -51.06939
+zone.latitude = 0.034934
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 97
 zone.region = "Caruari"
-zone.long = -66.908559
-zone.lat = -4.881605
+zone.longitude = -66.908559
+zone.latitude = -4.881605
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 98
 zone.region = "São Luís"
-zone.long = -44.282513
-zone.lat = -2.538742
+zone.longitude = -44.282513
+zone.latitude = -2.538742
 zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
 zone.ddd = 99
 zone.region = "Imperatriz"
-zone.long = -47.477726
-zone.lat = -5.518471
+zone.longitude = -47.477726
+zone.latitude = -5.518471
 zone.task_id = rand(1..10)
 zone.save
 puts 'Dados criados com sucesso!'

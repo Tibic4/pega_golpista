@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all.page(params[:page]).per(10)
+    @tasks = Task.all.page(params[:page]).per(10).order("created_at DESC")
   end
 
   # GET /tasks/1 or /tasks/1.json
@@ -33,12 +33,13 @@ class TasksController < ApplicationController
         @scammer = Scammer.new(scammer_params[:scammer])
         @scammer.task_id = @task.id
         @scammer.save
+
         # Save count in ddd table
-        Zone.find_by(ddd: set_ddd).increment!(:count)
+        Zone.find_by(ddd: set_ddd).increment!(:count_of_scammers)
         # end
 
         # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
-        format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
+        format.html { redirect_to tasks_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new, status: :unprocessable_entity }
