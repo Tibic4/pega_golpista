@@ -39,7 +39,7 @@ class TasksController < ApplicationController
         # end
 
         # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
-        format.html { redirect_to task_url(@task), notice: "Task was successfully created." }
+        format.html { redirect_to tasks_url(@task), notice: "Task was successfully created." }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new, status: :unprocessable_entity }
