@@ -5,8 +5,8 @@ class ZonesController < ApplicationController
     @markers = @zones.map do |zone|
       {
         lat: zone.latitude,
-        lng: zone.longitude
-
+        lng: zone.longitude,
+        ddd: zone.ddd
       }
     end
     # Count total scamers

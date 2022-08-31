@@ -1,21 +1,17 @@
 import { Controller } from "@hotwired/stimulus";
-import { map } from "jquery";
 
 // Connects to data-controller="maps"
 export default class extends Controller {
   static values = {
-    markers: Array
-  }
+    markers: Array,
+  };
   // Map styles
-
 
   connect() {
     console.log("Maps controller connected");
     this.initializeMap();
-    this.#addMarkersToMap()
+    // this.#addMarkersToMap();
   }
-
-
 
   initializeMap() {
     // Map styles
@@ -109,40 +105,40 @@ export default class extends Controller {
       rotateControl: false,
       streetViewControl: false,
       panControl: false,
-
     };
     var map = new google.maps.Map(this.element, mapOptions);
 
-
     // Get the location of the user
     if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition((position) => {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
 
-            // Center at the user's location
-            map.setCenter(new google.maps.LatLng(latitude, longitude));
-
-          }, () => {
-            map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
-          }
-            );
-
+          // Center at the user's location
+          map.setCenter(new google.maps.LatLng(latitude, longitude));
+        },
+        () => {
+          map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
+        }
+      );
     } else {
-        console.log("Geolocation is not allowed");
-            // Centered at the default location
-         map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
-      }
+      console.log("Geolocation is not allowed");
+      // Centered at the default location
+      map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
     }
-
-  // Add market to the map
-  #addMarkersToMap() {
+    // Add market to the map
     this.markersValue.forEach((marker) => {
-      new google.maps.Marker({
-        position: { lat: marker.lat, lng: marker.lng },
-        map: this.map,
+      const pin = new google.maps.Marker({
+        position: { lat: parseFloat(marker.lat), lng: parseFloat(marker.lng) },
+        map: map,
+        label: marker.label,
       });
+      pin.setMap(map);
       console.log(marker);
     });
   }
+
+  // #addMarkersToMap() {
+  // }
 }
