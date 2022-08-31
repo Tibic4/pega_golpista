@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tasks do
     resources :scammers, only: %i[new create show]
   end
+  get "zones", to: "zones#index"
   root 'pages#home'
   get 'pages/reporting'
   get 'pages/types_of_fraud'
