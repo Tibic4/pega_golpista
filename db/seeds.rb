@@ -197,12 +197,6 @@ zone.task_id = rand(1..10)
 zone.save
 
 zone = Zone.new
-zone.ddd = 26
-zone.region = "Novas Regiões"
-zone.task_id = rand(1..10)
-zone.save
-
-zone = Zone.new
 zone.ddd = 27
 zone.region = "Vitória"
 zone.longitude = -40.312806
