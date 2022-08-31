@@ -1,10 +1,18 @@
 import { Controller } from "@hotwired/stimulus";
+import { map } from "jquery";
 
 // Connects to data-controller="maps"
 export default class extends Controller {
-  connect() {}
+  // Map styles
+
+
+  connect() {
+  }
+
+
 
   initializeMap() {
+    // Map styles
     var mapStyles = [
       {
         featureType: "poi.attraction",
@@ -79,6 +87,26 @@ export default class extends Controller {
         ],
       },
     ];
+
+    var mapOptions = {
+      // Set Center
+      zoom: 8,
+      styles: mapStyles,
+      streetViewControl: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      // remove the default map controls
+      mapTypeControl: false,
+      fullscreenControl: false,
+      zoomControl: false,
+      scaleControl: false,
+      rotateControl: false,
+      streetViewControl: false,
+      panControl: false,
+
+    };
+    var map = new google.maps.Map(this.element, mapOptions);
+
+
     // Get the location of the user
     if (navigator.geolocation) {
       navigator.permissions.query({ name: "geolocation" }).then((result) => {
@@ -87,20 +115,14 @@ export default class extends Controller {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            // Create a map centered at the user's location
-            const map = new google.maps.Map(this.element, {
-              center: { lat: latitude, lng: longitude },
-              zoom: 8,
-            });
+            // Center at the user's location
+            map.setCenter(new google.maps.LatLng(latitude, longitude));
 
-            // // Style the map
-            // map.setOptions({ styles: mapStyles });
           });
+
         } else {
-          const map = new google.maps.Map(this.element, {
-            center: { lat: -23.5489, lng: -46.6388 },
-            zoom: 8,
-          });
+            // Centered at the default location
+            map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
         }
       });
     }
