@@ -1,17 +1,21 @@
 .navbar{
   display: flex;
+  justify-content: space-between;
 }
 
-.nav-list{
-  display: flex;
+.logo{
+  justify-content: flex-start;
+}
+
+.navbar-list{
+  display: contents;
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
-  flex-grow: -1;
 }
 .nav-link {
   font-family: "Nunito", sans-serif;
-  // font-size: 1.2rem;
+  font: size 10vw;
   font-weight: bold;
 }
 
@@ -20,7 +24,6 @@
 }
 
 .navbar-fixed{
-  
-  background-color: #08528fc0;
+  background-color: #08528f;
   align-items: center;
 }
