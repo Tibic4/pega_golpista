@@ -5,52 +5,52 @@ body {
 
 // Main banner starts here
 
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-}
+// .banner {
+//   background-size: cover;
+//   background-position: center;
+//   padding: 150px 0;
+// }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
+// .banner h1 {
+//   margin: 0;
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+//   font-size: 32px;
+//   font-weight: bold;
+// }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: 0.7;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: 0.7;
+//   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+// }
 
-.text-bg-danger {
-  color: white important;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 3rem;
-  font-weight: 700;
-}
-.card-body h4 {
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 3rem;
-}
-.card-1 {
-  background: rgba(1, 42, 74, 0.75);
-}
-.space-1 {
-  display: none;
-}
+// .text-bg-danger {
+//   color: white important;
+//   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+//   font-size: 3rem;
+//   font-weight: 700;
+// }
+// .card-body h4 {
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+//   font-size: 3rem;
+// }
+// .card-1 {
+//   background: rgba(1, 42, 74, 0.75);
+// }
+// .space-1 {
+//   display: none;
+// }
 
-.btn-1 {
-  font-size: 1.5rem;
-}
+// .btn-1 {
+//   font-size: 1.5rem;
+// }
 
-.divider-mobile-one {
-  display: none;
-}
+// .divider-mobile-one {
+//   display: none;
+// }
 
 @media (max-width: 768px) {
   .space-1 {
