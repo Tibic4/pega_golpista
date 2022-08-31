@@ -1,5 +1,5 @@
 .navbar{
-  
+  display: flex;
 }
 
 .nav-list{
@@ -11,10 +11,16 @@
 }
 .nav-link {
   font-family: "Nunito", sans-serif;
-  font-size: 1.2rem;
+  // font-size: 1.2rem;
   font-weight: bold;
 }
 
+.nav-item {
+  margin-left: 10px;
+}
+
 .navbar-fixed{
+  
   background-color: #08528fc0;
+  align-items: center;
 }
