@@ -1,5 +1,29 @@
+.navbar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  justify-content: flex-start;
+}
+
+.navbar-list{
+  display: contents;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+}
 .nav-link {
   font-family: "Nunito", sans-serif;
-  font-size: 1.2rem;
+  font: size 10vw;
   font-weight: bold;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.navbar-fixed{
+  background-color: #08528f;
+  align-items: center;
 }
