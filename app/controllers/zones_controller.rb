@@ -5,10 +5,14 @@ class ZonesController < ApplicationController
     @markers = @zones.map do |zone|
       {
         lat: zone.latitude,
-        lng: zone.longitude,
-        # infoWindow: render_to_string(partial: "info_window", locals: { zone: }),
-        # image_url: helpers.asset_url('https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m2.png')
+        lng: zone.longitude
+
       }
     end
+    # Count total scamers
+    @total_scammers = Zone.where.not(count_of_scammers: nil).sum(:count_of_scammers)
+
+    # Count the number of scammers in each ddd
+    @count_of_scammers = Zone.where.not(count_of_scammers: nil).group(:ddd).sum(:count_of_scammers)
   end
 end

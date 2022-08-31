@@ -35,7 +35,7 @@ class TasksController < ApplicationController
         @scammer.save
 
         # Save count in ddd table
-        Zone.find_by(ddd: set_ddd).increment!(:count)
+        Zone.find_by(ddd: set_ddd).increment!(:count_of_scammers)
         # end
 
         # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
