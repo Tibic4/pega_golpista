@@ -6,18 +6,18 @@
   <div class="form-inputs">
     <%= f.input :date, as: :date, order: [:day, :month, :year], label: "Date", input_html: { value: Date} %>
     <%= f.input :scam_type %>
-    <%= f.input :cep %>
+    <%= f.input :cep, required: true %>
     <%= f.input :money_lost %>
   </div>
 
   <%# Simple fields for :scammer %>
   <div class="form-inputs">
     <%= f.simple_fields_for :scammer do |scammer| %>
-      <%= scammer.input :name, label: "Nome Usado pelo golpista" %>
-      <%= scammer.input :email, label: "Email Usado pelo golpista" %>
-      <%= scammer.input :phone, label: "Telefone Usado pelo golpista" %>
-      <%= scammer.input :website, label: "Site onde ocorreu golpe" %>
-      <%= scammer.input :description, label: "Descrição do golpe" %>
+      <%= scammer.input :name, required: false, label: "Nome Usado pelo golpista" %>
+      <%= scammer.input :email, required: false, label: "Email Usado pelo golpista" %>
+      <%= scammer.input :phone, required: false, label: "Telefone Usado pelo golpista" %>
+      <%= scammer.input :website, required: false, label: "Site onde ocorreu golpe" %>
+      <%= scammer.input :description, required: false, label: "Descrição do golpe" %>
     <% end %>
 
 

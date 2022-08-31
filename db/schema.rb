@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_173814) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_163022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,8 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_173814) do
   create_table "zones", force: :cascade do |t|
     t.integer "ddd"
     t.string "region"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "count", default: 0
     t.bigint "task_id", null: false
     t.datetime "created_at", null: false
