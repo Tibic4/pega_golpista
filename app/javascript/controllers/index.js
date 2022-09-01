@@ -7,7 +7,13 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-
 import MapsController from "./maps_controller"
 application.register("maps", MapsController)
+
+import NavbarController from "./navbar_controller"
+
+application.register("navbar", NavbarController)
+
+import RemoteModalController from "./remote_modal_controller"
+application.register("remote-modal", RemoteModalController)
 

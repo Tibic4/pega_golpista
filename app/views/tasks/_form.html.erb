@@ -1,27 +1,27 @@
+<div class="container">
+  <div id="form">
+    <%= simple_form_for(@task) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= simple_form_for(@task) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :date, as: :date %>
-    <%= f.input :scam_type %>
-    <%= f.input :cep, required: true %>
-    <%= f.input :money_lost %>
-  </div>
-
-  <%# Simple fields for :scammer %>
-  <div class="form-inputs">
-    <%= f.simple_fields_for :scammer do |scammer| %>
-      <%= scammer.input :name, required: false, label: "Nome Usado pelo golpista" %>
-      <%= scammer.input :email, required: false, label: "Email Usado pelo golpista" %>
-      <%= scammer.input :phone, required: false, label: "Telefone Usado pelo golpista" %>
-      <%= scammer.input :website, required: false, label: "Site onde ocorreu golpe" %>
-      <%= scammer.input :description, required: false, label: "Descrição do golpe" %>
+      <div class="form-inputs">
+        <%= f.input :date, as: :date, order: [:day, :month, :year], label: "Data", input_html: { value: Date} %>
+        <%= f.input :scam_type, label: "Tipo de golpe" %>
+        <%= f.input :cep, required: true, label: "CEP" %>
+        <%= f.input :money_lost, label: "Quantia perdida" %>
+      </div>
+      <%# Simple fields for :scammer %>
+      <div class="form-inputs">
+        <%= f.simple_fields_for :scammer do |scammer| %>
+          <%= scammer.input :name, required: false, label: "Nome usado pelo golpista" %>
+          <%= scammer.input :email, required: false, label: "Email usado pelo golpista" %>
+          <%= scammer.input :phone, required: false, label: "Telefone usado pelo golpista" %>
+          <%= scammer.input :website, required: false, label: "Site ou plataforma onde ocorreu golpe" %>
+          <%= scammer.input :description, required: false, label: "Descrição do golpe" %>
+        <% end %>
+      <div class="form-actions">
+        <%= f.button :submit%>
+      </div>
     <% end %>
-
-
-  <div class="form-actions">
-    <%= f.button :submit %>
   </div>
-<% end %>
+</div>

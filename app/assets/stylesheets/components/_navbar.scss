@@ -1,13 +1,14 @@
 .navbar{
   display: flex;
   justify-content: space-between;
+  background-color: #08528f42;
 }
 
 .logo{
   justify-content: flex-start;
 }
 
-.navbar-list{
+.menu{
   display: contents;
   flex-wrap: inherit;
   align-items: center;
@@ -24,6 +25,8 @@
 }
 
 .navbar-fixed{
-  background-color: #08528f;
+  background-color: #08528f00;
   align-items: center;
+  transition: linear;
+  transition-duration: 250ms;
 }

@@ -11,8 +11,10 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
+    
     <div class="content">
     <%= yield %>
+    <%= turbo_frame_tag "remote_modal", target: "_top" %>
     </div>
     <%= render "shared/footer" %>
   </body>
