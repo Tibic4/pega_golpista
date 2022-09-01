@@ -1,0 +1,23 @@
+<%# Show scammers details %>
+<div id="<%= dom_id @scammer %>">
+  <p>
+    <strong>Name</strong>
+    <%= @scammer.name %>
+  </p>
+  <p>
+    <strong>Email</strong>
+    <%=@scammer.email %>
+  </p>
+  <p>
+    <strong>Phone</strong>
+    <%= @scammer.phone %>
+  </p>
+  <p>
+    <strong>Website</strong>
+    <%= @scammer.website %>
+  </p>
+  <p>
+    <strong>Description</strong>
+    <%= @scammer.description %>
+  </p>
+</div>
