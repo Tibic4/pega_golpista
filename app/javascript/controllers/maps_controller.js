@@ -4,6 +4,7 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static values = {
     markers: Array,
+
     //count of scammers value
     countOfScammers: Array,
   };
@@ -12,8 +13,6 @@ export default class extends Controller {
   connect() {
     console.log("Maps controller connected");
     this.initializeMap();
-    // Parse count_of_scammers
-    // this.countOfScammersValue = JSON.parse(this.countOfScammersValue);
   }
 
   initializeMap() {
@@ -130,38 +129,44 @@ export default class extends Controller {
       // Centered at the default location
       map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
     }
-    // // Add market to the map
-    // this.markersValue.forEach((marker) => {
-    //   console.log(marker);
-    // });
 
-    // If count of scammers is > 0
-    if (this.countOfScammersValue > 0) {
-      this.countOfScammersValue.forEach((scammer) => {
-        console.log(scammer);
-        this.count_of_scammersValue.forEach((scammer) => {
-          console.log(scammer);
-          this.markersValue.forEach((marker) => {
-            // Compare marker ddd with the count of scammers key
-            if (marker.ddd == this.countOfScammersValue[0]) {
-              console.log(scammer.ddd);
-              console.log(marker.ddd);
-              //Add marker to the map
-              const pin = new google.maps.Marker({
-                position: {
-                  lat: parseFloat(marker.lat),
-                  lng: parseFloat(marker.lng),
-                },
-                map: map,
-                // Label the marker with the number of scammers in the ddd
-                label: { text: scammer.value, color: "white" },
-                icon: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
-              });
-              pin.setMap(map);
-            }
+    const countScammers = this.countOfScammersValue;
+    const myMarkers = this.markersValue;
+
+    markerOptions = {
+      // Set the icon
+      icon: {
+        url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
+        scaledSize: new google.maps.Size(50, 50),
+      },
+      label: {
+        text: "1",
+        color: "white",
+        fontSize: "16px",
+        fontWeight: "bold",
+      },
+    };
+
+
+    // Mark map if count of scammers ddd equal markers ddd
+    myMarkers.forEach((marker) => {
+      countScammers.forEach((scammer) => {
+        if (scammer.ddd == marker.ddd) {
+          const markerPosition = new google.maps.LatLng(marker.lat, marker.lng);
+          const markerOptions = {
+            position: markerPosition,
+            map: map,
+            title: marker.title,
+          };
+          const googleMarker = new google.maps.Marker(markerOptions);
+          const infoWindow = new google.maps.InfoWindow({
+            content: marker.infoWindow,
           });
-        });
+          googleMarker.addListener("click", () => {
+            infoWindow.open(map, googleMarker); // Open the info window
+          });
+        }
       });
-    }
+    });
   }
 }

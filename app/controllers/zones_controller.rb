@@ -13,9 +13,12 @@ class ZonesController < ApplicationController
     @total_scammers = Zone.where.not(count_of_scammers: nil).sum(:count_of_scammers)
 
     # Count the number of scammers in each ddd
-    countOfScammers = Zone.where.not(count_of_scammers: nil).group(:ddd).sum(:count_of_scammers)
-    # Transform the hash into an array
-    @countOfScammers = []
-    @countOfScammers << countOfScammers
+    @countOfScammer = Zone.where.not(count_of_scammers: 0)
+    @countOfScammers = @countOfScammer.map do |zone|
+      {
+        ddd: zone.ddd,
+        count_of_scammers: zone.count_of_scammers
+      }
+    end
   end
 end
