@@ -10,7 +10,6 @@
         <%= f.input :cep, required: true, label: "CEP" %>
         <%= f.input :money_lost, label: "Quantia perdida" %>
       </div>
-
       <%# Simple fields for :scammer %>
       <div class="form-inputs">
         <%= f.simple_fields_for :scammer do |scammer| %>
@@ -20,8 +19,6 @@
           <%= scammer.input :website, required: false, label: "Site ou plataforma onde ocorreu golpe" %>
           <%= scammer.input :description, required: false, label: "Descrição do golpe" %>
         <% end %>
-
-
       <div class="form-actions">
         <%= f.button :submit%>
       </div>

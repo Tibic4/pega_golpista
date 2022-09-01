@@ -1,21 +1,19 @@
 import { Controller } from "@hotwired/stimulus";
-import { map } from "jquery";
 
 // Connects to data-controller="maps"
 export default class extends Controller {
   static values = {
-    markers: Array
-  }
-  // Map styles
+    markers: Array,
 
+    //count of scammers value
+    countOfScammers: Array,
+  };
+  // Map styles
 
   connect() {
     console.log("Maps controller connected");
     this.initializeMap();
-    this.#addMarkersToMap()
   }
-
-
 
   initializeMap() {
     // Map styles
@@ -109,40 +107,64 @@ export default class extends Controller {
       rotateControl: false,
       streetViewControl: false,
       panControl: false,
-
     };
     var map = new google.maps.Map(this.element, mapOptions);
 
-
     // Get the location of the user
     if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition((position) => {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
 
-            // Center at the user's location
-            map.setCenter(new google.maps.LatLng(latitude, longitude));
-
-          }, () => {
-            map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
-          }
-            );
-
+          // Center at the user's location
+          map.setCenter(new google.maps.LatLng(latitude, longitude));
+        },
+        () => {
+          map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
+        }
+      );
     } else {
-        console.log("Geolocation is not allowed");
-            // Centered at the default location
-         map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
-      }
+      console.log("Geolocation is not allowed");
+      // Centered at the default location
+      map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
     }
 
-  // Add market to the map
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      new google.maps.Marker({
-        position: { lat: marker.lat, lng: marker.lng },
-        map: this.map,
+    const countScammers = this.countOfScammersValue;
+    const myMarkers = this.markersValue;
+
+    // Mark map if count of scammers ddd equal markers ddd
+
+    myMarkers.forEach((marker) => {
+      countScammers.forEach((scammer) => {
+        if (scammer.ddd == marker.ddd) {
+          const markerPosition = new google.maps.LatLng(marker.lat, marker.lng);
+          const markerOptions = {
+            position: markerPosition,
+            map: map,
+            title: marker.title,
+          };
+          const googleMarker = new google.maps.Marker({
+            ...markerOptions,
+            icon: {
+              url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
+              scaledSize: new google.maps.Size(50, 50),
+            },
+            label: {
+              text: `${scammer.ddd}`,
+              color: "white",
+              fontSize: "16px",
+              fontWeight: "bold",
+            },
+          });
+          const infoWindow = new google.maps.InfoWindow({
+            content: marker.infoWindow,
+          });
+          googleMarker.addListener("click", () => {
+            infoWindow.open(map, googleMarker); // Open the info window
+          });
+        }
       });
-      console.log(marker);
     });
   }
 }

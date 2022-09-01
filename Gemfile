@@ -41,8 +41,11 @@ gem "i18n"
 #  Use Faker for fake data
 gem "faker"
 
-# Use cep_brasil for brazilian zip code
+# Use cep_brasil for faker brazilian zip code
 gem "cep_brasil"
+
+# Use validates-correios-cep for validate brazilian zip code
+gem 'validates-correios-cep'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
