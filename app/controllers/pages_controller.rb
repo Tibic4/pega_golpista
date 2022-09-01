@@ -2,7 +2,9 @@
 
 # Pages controller  -  This controller handles the pages of the application
 class PagesController < ApplicationController
-  def home; end
+  def home
+    @task = Task.new
+  end
 
   def reporting; end
 
