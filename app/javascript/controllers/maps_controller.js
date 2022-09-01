@@ -133,22 +133,8 @@ export default class extends Controller {
     const countScammers = this.countOfScammersValue;
     const myMarkers = this.markersValue;
 
-    markerOptions = {
-      // Set the icon
-      icon: {
-        url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
-        scaledSize: new google.maps.Size(50, 50),
-      },
-      label: {
-        text: "1",
-        color: "white",
-        fontSize: "16px",
-        fontWeight: "bold",
-      },
-    };
-
-
     // Mark map if count of scammers ddd equal markers ddd
+
     myMarkers.forEach((marker) => {
       countScammers.forEach((scammer) => {
         if (scammer.ddd == marker.ddd) {
@@ -158,7 +144,19 @@ export default class extends Controller {
             map: map,
             title: marker.title,
           };
-          const googleMarker = new google.maps.Marker(markerOptions);
+          const googleMarker = new google.maps.Marker({
+            ...markerOptions,
+            icon: {
+              url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
+              scaledSize: new google.maps.Size(50, 50),
+            },
+            label: {
+              text: `${scammer.ddd}`,
+              color: "white",
+              fontSize: "16px",
+              fontWeight: "bold",
+            },
+          });
           const infoWindow = new google.maps.InfoWindow({
             content: marker.infoWindow,
           });
