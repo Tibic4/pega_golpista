@@ -22,6 +22,9 @@ module PegaGolpista
     # in config/environments, which are processed later.
     #
     config.time_zone = "Brasilia"
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    config.i18n.default_locale = 'pt-BR'
+
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

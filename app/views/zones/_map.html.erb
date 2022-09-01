@@ -4,7 +4,7 @@
     <div class="col-12 col-lg-6 col-md-12">
       <div class="map">
         <%# initialize Google Map %>
-        <div data-controller="maps" data-maps-markers-value="<%= @markers.to_json %>"  id="map" style="width: 100%; height: 500px;"></div>
+        <div data-controller="maps" data-maps-markers-value="<%= @markers.to_json %>" data-maps-count-of-scammers-value="<%= @countOfScammers.to_json %>" id="map" style="width: 100%; height: 500px;"></div>
       </div>
     </div>
     <%# section search bar maps start %>

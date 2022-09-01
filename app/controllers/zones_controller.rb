@@ -13,6 +13,8 @@ class ZonesController < ApplicationController
     @total_scammers = Zone.where.not(count_of_scammers: nil).sum(:count_of_scammers)
 
     # Count the number of scammers in each ddd
-    @count_of_scammers = Zone.where.not(count_of_scammers: nil).group(:ddd).sum(:count_of_scammers)
+    countOfScammers = Zone.where.not(count_of_scammers: nil).group(:ddd).sum(:count_of_scammers)
+    @countOfScammers = []
+    @countOfScammers << countOfScammers
   end
 end
