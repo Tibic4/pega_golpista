@@ -2,17 +2,14 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-}
-
-.banner img {
-  top: 10000px;
+  height: 800px;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 69px;
   font-weight: bold;
 }
 
@@ -21,6 +18,7 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // margin-top: 10px;
 }
 
 .container.hero {
@@ -33,7 +31,28 @@
   background-color: #D23333;
   text-decoration: none;
   border-radius: 10px;
-  padding: 25px 20px;
+  padding: 20px 15px;
   color: black;
   font-weight: bold;
+  border: none;
+}
+
+.mask {
+  border-radius: 100%;
+  padding: 80px;
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                    url(https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+}
+
+.btn-banner {
+  background-color: transparent;
+  border: none;
+  transition: transform .2s;
+}
+
+.btn-banner:hover {
+  transform: scale(1.01);
 }
