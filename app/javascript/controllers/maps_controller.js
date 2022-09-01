@@ -14,7 +14,6 @@ export default class extends Controller {
     this.initializeMap();
     // Parse count_of_scammers
     // this.countOfScammersValue = JSON.parse(this.countOfScammersValue);
-
   }
 
   initializeMap() {
@@ -113,52 +112,56 @@ export default class extends Controller {
     var map = new google.maps.Map(this.element, mapOptions);
 
     // Get the location of the user
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(
-    //     (position) => {
-    //       const latitude = position.coords.latitude;
-    //       const longitude = position.coords.longitude;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
 
-    //       // Center at the user's location
-    //       map.setCenter(new google.maps.LatLng(latitude, longitude));
-    //     },
-    //     () => {
-    //       map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
-    //     }
-    //   );
-    // } else {
-    //   console.log("Geolocation is not allowed");
-    //   // Centered at the default location
-    //   map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
-    // }
-    // Add market to the map
-    this.markersValue.forEach((marker) => {
-      console.log(marker);
-    });
-
-    this.countOfScammersValue.forEach((scammer) => {
-      console.log(scammer);
-    });
-    // Compare marker ddd with the count of scammers
-    // this.count_of_scammersValue.forEach((scammer) => {
-    //   console.log(scammer);
-    //   this.markersValue.forEach((marker) => {
-    //     if (scammer.ddd == marker.ddd) {
-    //       console.log(scammer.ddd);
-    //       console.log(marker.ddd);
-    //       const pin = new google.maps.Marker({
-    //         position: {
-    //           lat: parseFloat(marker.lat),
-    //           lng: parseFloat(marker.lng),
-    //         },
-    //         map: map,
-    //         // Label the marker with the number of scammers in the ddd
-    //         label: {text: scammer.value , color: "white"},
-    //         icon: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
-    //       });
-    //       pin.setMap(map);
-    //     }
-    //   });
+          // Center at the user's location
+          map.setCenter(new google.maps.LatLng(latitude, longitude));
+        },
+        () => {
+          map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
+        }
+      );
+    } else {
+      console.log("Geolocation is not allowed");
+      // Centered at the default location
+      map.setCenter(new google.maps.LatLng(-23.5489, -46.6388));
+    }
+    // // Add market to the map
+    // this.markersValue.forEach((marker) => {
+    //   console.log(marker);
     // });
+
+    // If count of scammers is > 0
+    if (this.countOfScammersValue > 0) {
+      this.countOfScammersValue.forEach((scammer) => {
+        console.log(scammer);
+        this.count_of_scammersValue.forEach((scammer) => {
+          console.log(scammer);
+          this.markersValue.forEach((marker) => {
+            // Compare marker ddd with the count of scammers key
+            if (marker.ddd == this.countOfScammersValue[0]) {
+              console.log(scammer.ddd);
+              console.log(marker.ddd);
+              //Add marker to the map
+              const pin = new google.maps.Marker({
+                position: {
+                  lat: parseFloat(marker.lat),
+                  lng: parseFloat(marker.lng),
+                },
+                map: map,
+                // Label the marker with the number of scammers in the ddd
+                label: { text: scammer.value, color: "white" },
+                icon: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
+              });
+              pin.setMap(map);
+            }
+          });
+        });
+      });
+    }
   }
 }

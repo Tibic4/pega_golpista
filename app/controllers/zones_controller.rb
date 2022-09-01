@@ -14,6 +14,7 @@ class ZonesController < ApplicationController
 
     # Count the number of scammers in each ddd
     countOfScammers = Zone.where.not(count_of_scammers: nil).group(:ddd).sum(:count_of_scammers)
+    # Transform the hash into an array
     @countOfScammers = []
     @countOfScammers << countOfScammers
   end
