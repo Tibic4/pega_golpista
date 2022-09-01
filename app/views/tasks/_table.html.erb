@@ -20,7 +20,7 @@
         <td></td>
       <% else %>
       <td>
-      <%= link_to "Detalhes", task_scammer_path(task_id: task, id:task.scammers.first.id), class: "btn btn-primary", data: { turbo_frame: "remote_modal" }%>
+      <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
       </td>
       <% end %>
     </tr>
