@@ -8,9 +8,10 @@ export default class extends Controller {
     //count of scammers value
     countOfScammers: Array,
   };
-
+  // Map styles
 
   connect() {
+    console.log("Maps controller connected");
     this.initializeMap();
   }
 
@@ -132,7 +133,6 @@ export default class extends Controller {
     const countScammers = this.countOfScammersValue;
     const myMarkers = this.markersValue;
 
-
     // Mark map if count of scammers ddd equal markers ddd
 
     myMarkers.forEach((marker) => {
@@ -144,9 +144,6 @@ export default class extends Controller {
             map: map,
             title: marker.title,
           };
-          // Call function
-          // const myValue = countScammersFunc(scammer.ddd);
-
           const googleMarker = new google.maps.Marker({
             ...markerOptions,
             icon: {
@@ -154,7 +151,7 @@ export default class extends Controller {
               scaledSize: new google.maps.Size(50, 50),
             },
             label: {
-              text: `${scammer.count_of_scammers}`,
+              text: `${scammer.ddd}`,
               color: "white",
               fontSize: "16px",
               fontWeight: "bold",

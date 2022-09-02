@@ -10,7 +10,7 @@
   </tr>
 </thead>
 <tbody>
-  <% tasks.each do |task| %>
+  <% @tasks.each do |task| %>
     <tr>
       <%# Parse date i18n %>
       <td><%= l task.date, format: :short %></td>
