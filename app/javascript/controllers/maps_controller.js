@@ -9,7 +9,6 @@ export default class extends Controller {
     countOfScammers: Array,
   };
 
-
   connect() {
     this.initializeMap();
   }
@@ -132,7 +131,6 @@ export default class extends Controller {
     const countScammers = this.countOfScammersValue;
     const myMarkers = this.markersValue;
 
-
     // Mark map if count of scammers ddd equal markers ddd
 
     myMarkers.forEach((marker) => {
@@ -144,28 +142,50 @@ export default class extends Controller {
             map: map,
             title: marker.title,
           };
-          // Call function
-          // const myValue = countScammersFunc(scammer.ddd);
-
-          const googleMarker = new google.maps.Marker({
-            ...markerOptions,
-            icon: {
-              url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
-              scaledSize: new google.maps.Size(50, 50),
-            },
-            label: {
-              text: `${scammer.count_of_scammers}`,
-              color: "white",
-              fontSize: "16px",
-              fontWeight: "bold",
-            },
-          });
-          const infoWindow = new google.maps.InfoWindow({
-            content: marker.infoWindow,
-          });
-          googleMarker.addListener("click", () => {
-            infoWindow.open(map, googleMarker); // Open the info window
-          });
+          // Compare count of scammers is bigger than 10
+          if (scammer.count_of_scammers <= 10) {
+            const googleMarker = new google.maps.Marker({
+              ...markerOptions,
+              icon: {
+                url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m1.png",
+                scaledSize: new google.maps.Size(50, 50),
+              },
+              label: {
+                text: `${scammer.count_of_scammers}`,
+                color: "white",
+                fontSize: "16px",
+                fontWeight: "bold",
+              },
+            });
+          } else if (scammer.count_of_scammers <= 50) {
+            const googleMarker = new google.maps.Marker({
+              ...markerOptions,
+              icon: {
+                url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m2.png",
+                scaledSize: new google.maps.Size(50, 50),
+              },
+              label: {
+                text: `${scammer.count_of_scammers}`,
+                color: "white",
+                fontSize: "16px",
+                fontWeight: "bold",
+              },
+            });
+          } else {
+            const googleMarker = new google.maps.Marker({
+              ...markerOptions,
+              icon: {
+                url: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m3.png",
+                scaledSize: new google.maps.Size(50, 50),
+              },
+              label: {
+                text: `${scammer.count_of_scammers}`,
+                color: "white",
+                fontSize: "16px",
+                fontWeight: "bold",
+              },
+            });
+          }
         }
       });
     });

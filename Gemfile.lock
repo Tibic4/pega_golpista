@@ -308,6 +308,7 @@ DEPENDENCIES
   bootstrap5-kaminari-views
   capybara
   cep_brasil
+  correios-cep
   debug
   dotenv-rails
   faker
