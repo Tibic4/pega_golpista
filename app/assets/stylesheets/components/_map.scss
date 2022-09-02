@@ -1,0 +1,21 @@
+#map {
+  display: flex;
+  justify-content: space-between;
+  // margin-top: 100px;
+}
+// .map {
+//   display: grid;
+//   justify-content: center;
+// }
+#cep {
+  margin-top: 40px;
+}
+.btn-buscar {
+  border-radius: 10px;
+  border: 1px solid;
+  background-color: lightgreen;
+  padding: 15px 10px;
+}
+.map {
+  margin-top: 40px;
+}
