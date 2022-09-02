@@ -8,7 +8,7 @@ export default class extends Controller {
     //count of scammers value
     countOfScammers: Array,
   };
-  // Map styles
+
 
   connect() {
     console.log("Maps controller connected");
@@ -133,6 +133,38 @@ export default class extends Controller {
     const countScammers = this.countOfScammersValue;
     const myMarkers = this.markersValue;
 
+
+    // Funciton to take value of the count of scammers
+    const countScammersFunc = (key) => {
+      for (var key in countScammers) {
+        if (countScammers.hasOwnProperty(key)) {
+          var val = countScammers[key];
+          return val;
+        }
+        console.log(val);
+      }
+    };
+
+    // Funcition transforms the scammer value hash in integer
+    const hash = (str) => {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+        hash = hash & hash;
+      }
+      return hash;
+    };
+
+    // Call Funcition to test
+    // console.log(countScammersFunc("countScammers"));
+
+
+    countScammers.forEach((count) => {
+      console.log(countScammersFunc(count.ddd));
+      // console.log(count.ddd);
+      // console.log(Object.values(count));
+    });
+
     // Mark map if count of scammers ddd equal markers ddd
 
     myMarkers.forEach((marker) => {
@@ -144,6 +176,9 @@ export default class extends Controller {
             map: map,
             title: marker.title,
           };
+          // Call function
+          const myValue = countScammersFunc(scammer.ddd);
+
           const googleMarker = new google.maps.Marker({
             ...markerOptions,
             icon: {
