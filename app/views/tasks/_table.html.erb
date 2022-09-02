@@ -1,35 +1,35 @@
 
 <table class="table">
-<thead class="bg-primary text-white">
-  <tr>
-    <th scope="col">Date</th>
-    <th scope="col">Scam type</th>
-    <th scope="col">CEP</th>
-    <th scope="col">Money Lost</th>
-    <th scope="col">Details</th>
-  </tr>
-</thead>
-<tbody>
-  <% @tasks.each do |task| %>
+  <thead class="bg-primary text-white">
     <tr>
-      <%# Parse date i18n %>
-      <td><%= l task.date, format: :short %></td>
-      <td><%= task.scam_type %></td>
-      <%# Regex hidden last 3 digits cep %>
-      <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
-      <%# <td><%= task.cep %></td> %>
-      <%# Parse money_lost i18n %>
-      <td><%= number_to_currency task.money_lost %></td>
-      <% if task.scammers.empty? %>
-        <td></td>
-      <% else %>
-      <td>
-      <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
-      </td>
-      <% end %>
+      <th scope="col">Date</th>
+      <th scope="col">Scam type</th>
+      <th scope="col">CEP</th>
+      <th scope="col">Money Lost</th>
+      <th scope="col">Details</th>
     </tr>
-  <% end %>
-</tbody>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <%# Parse date i18n %>
+        <td><%= l task.date, format: :short %></td>
+        <td><%= task.scam_type %></td>
+        <%# Regex hidden last 3 digits cep %>
+        <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
+        <%# <td><%= task.cep %></td> %>
+        <%# Parse money_lost i18n %>
+        <td><%= number_to_currency task.money_lost %></td>
+        <% if task.scammers.empty? %>
+          <td></td>
+        <% else %>
+        <td>
+        <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
+        </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 <%# Align paginate in the center %>
 <div class="d-flex justify-content-center">

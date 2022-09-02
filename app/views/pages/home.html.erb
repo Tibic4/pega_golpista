@@ -2,7 +2,7 @@
 <%= render 'shared/banner' %>
 
 <div class="container">
-    <div class="col-lg-3">
+    <div class="items">
         <section id="report">
             <%= render "tasks/form"%>
         </section>
@@ -11,7 +11,10 @@
             <%= render 'zones/map' %>
         </section>
 
+        <section>
             <%= render "tasks/table"%>
+        </section>
+
         <section id="fraudes">
             <%= render 'pages/types_of_fraud' %>
         </section>
