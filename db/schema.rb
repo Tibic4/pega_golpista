@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_183815) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_181838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,12 +46,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_183815) do
     t.float "latitude"
     t.float "longitude"
     t.integer "count_of_scammers", default: 0
-    t.bigint "task_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_zones_on_task_id"
   end
 
   add_foreign_key "scammers", "tasks"
-  add_foreign_key "zones", "tasks"
 end

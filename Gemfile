@@ -46,6 +46,8 @@ gem "cep_brasil"
 
 # Use validates-correios-cep for validate brazilian zip code
 gem 'validates-correios-cep'
+gem 'correios-cep'
+
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
