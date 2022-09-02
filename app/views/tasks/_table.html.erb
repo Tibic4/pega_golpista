@@ -17,7 +17,6 @@
         <td><%= task.scam_type %></td>
         <%# Regex hidden last 3 digits cep %>
         <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
-        <%# <td><%= task.cep %></td> %>
         <%# Parse money_lost i18n %>
         <td><%= number_to_currency task.money_lost %></td>
         <% if task.scammers.empty? %>
