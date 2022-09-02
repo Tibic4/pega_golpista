@@ -4,6 +4,7 @@
 class PagesController < ApplicationController
   def home
     @task = Task.new
+    @tasks = Task.all.page(params[:page]).per(10).order("created_at DESC")
   end
 
   def reporting; end

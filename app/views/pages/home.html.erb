@@ -3,8 +3,21 @@
 
 <div class="container">
     <div class="col-lg-3">
-        <%= render 'pages/types_of_fraud' %>
-        <%= render "tasks/form"%>
-        <%= render 'pages/prevention' %>
+        <section id="report">
+            <%= render "tasks/form"%>
+        </section>
+
+        <section id="mapa">
+            <%= render 'zones/map' %>
+        </section>
+
+            <%= render "tasks/table"%>
+        <section id="fraudes">
+            <%= render 'pages/types_of_fraud' %>
+        </section>
+
+        <section id="prevencao">
+            <%= render 'pages/prevention' %>
+        </section>
     </div>
 </div>

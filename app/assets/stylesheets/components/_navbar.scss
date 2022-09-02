@@ -1,7 +1,7 @@
 .navbar{
   display: flex;
   justify-content: space-between;
-  background-color: #08528f42;
+  background: linear-gradient(180deg, rgba(1,42,74,1) 0%, rgba(1,42,74,1) 40%, rgba(1,42,74,0.9) 100%);
 }
 
 .logo{
@@ -24,9 +24,36 @@
   margin-left: 10px;
 }
 
+.nav-item a {
+  color: white;
+}
 .navbar-fixed{
-  background-color: #08528f00;
+  background: linear-gradient(180deg, rgba(1,42,74,1) 0%, rgba(1,42,74,1) 40%, rgba(1,42,74,0.8) 100%);
   align-items: center;
   transition: linear;
-  transition-duration: 250ms;
+  transition-duration: 350ms;
+}
+
+.nav-link a {
+  color: #012A4A;
+}
+
+.navbar-fixed a {
+  color: white;
+}
+
+.reportar:hover {
+  color: rgb(175, 175, 175);
+}
+
+.fraudes:hover {
+  color: rgb(175, 175, 175);
+}
+
+.prevencao:hover {
+  color: rgb(175, 175, 175);
+}
+
+.sobre:hover {
+  color: rgb(175, 175, 175);
 }

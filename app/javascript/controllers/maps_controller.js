@@ -9,7 +9,9 @@ export default class extends Controller {
     countOfScammers: Array,
   };
 
+  // Map styles
   connect() {
+    console.log("Maps controller connected");
     this.initializeMap();
   }
 
