@@ -1,36 +1,17 @@
+require "elasticsearch/model"
 module Searchable
   extend ActiveSupport::Concern
-
   included do
     include Elasticsearch::Model
-    include Elasticsearch::Model::Callbacks
-
-    mapping do
-      indexes :date, type: 'date'
-      indexes :scam_type, type: 'text'
-      indexes :cep, type: 'integer'
-      indexes :money_lost, type: 'float'
-      # mapping definition goes here
+    after_commit :index_document, if: :persisted?
+    after_commit on: [:destroy] do
+      __elasticsearch__.delete_document
     end
+  end
 
-    def self.search(query, scam_type = nil)
-      __elasticsearch__.search(
-        {
-          query: {
-            bool: {
-              must: {
-                multi_match: {
-                  query: query,
-                  fields: %w[date cep money_lost]
-                }
-              },
-              filter: {
-                term: { scam_type: scam_type }
-              }
-            }
-          }
-        }
-      )
-    end
+  private
+
+  def index_document
+    __elasticsearch__.index_document
   end
 end
