@@ -1,17 +1,48 @@
 require "elasticsearch/model"
+
 module Searchable
   extend ActiveSupport::Concern
+
   included do
     include Elasticsearch::Model
-    after_commit :index_document, if: :persisted?
-    after_commit on: [:destroy] do
-      __elasticsearch__.delete_document
+
+    settings analysis: {
+      filter: {
+        ngram_filter: {
+          type: "ngram",
+          min_gram: 2,
+          max_gram: 3
+        }
+      },
+      analyzer: {
+        ngram_analyzer: {
+          type: "custom",
+          tokenizer: "standard",
+          filter: [
+            "lowercase",
+            "asciifolding",
+            "ngram_filter"
+          ]
+        },
+        whitespace_analyzer: {
+          type: "custom",
+          tokenizer: "whitespace",
+          filter: [
+            "lowercase",
+            "asciifolding"
+          ]
+        }
+      }
+    } do
+      mappings dynamic: "false" do
+        {
+          type: "string", analyzer: "ngram_analyzer", search_analyzer: "whitespace_analyzer"
+        }
+      end
+
+      after_commit do
+        __elasticsearch__.index_document
+      end
     end
-  end
-
-  private
-
-  def index_document
-    __elasticsearch__.index_document
   end
 end
