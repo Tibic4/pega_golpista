@@ -33,16 +33,13 @@ module Searchable
           ]
         }
       }
-    } do
-      mappings dynamic: "false" do
-        {
-          type: "string", analyzer: "ngram_analyzer", search_analyzer: "whitespace_analyzer"
-        }
-      end
+    }
+    mapping do
+      indexes :autocomplete_hint, type: "text", analyzer: "ngram_analyzer"
+    end
 
-      after_commit do
-        __elasticsearch__.index_document
-      end
+    after_commit do
+      __elasticsearch__.index_document
     end
   end
 end
