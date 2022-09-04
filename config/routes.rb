@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :search, only: [] do
-    collection do
-      get :index
-    end
-  end
+  get 'search', to: 'searches#index'
+  post "searches", to: "searches#create"
+  get "autocomplete", to: "searches#autocomplete"
   resources :tasks do
     resources :scammers, only: %i[new create show]
   end

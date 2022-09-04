@@ -7,9 +7,6 @@ class TasksController < ApplicationController
   # GET /tasks or /tasks.json
   def index
     @tasks = Task.all.page(params[:page]).per(10).order("created_at DESC")
-    query = params["query"] || ""
-    res = Task.search(query)
-    render json: res.response["hits"]["hits"]
   end
 
   # GET /tasks/1 or /tasks/1.json

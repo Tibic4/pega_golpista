@@ -1,0 +1,8 @@
+
+<h2>Let's do some searching!</h2>
+
+<%# # Search form %>
+<%= form_tag searches_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search" %>
+<% end %>

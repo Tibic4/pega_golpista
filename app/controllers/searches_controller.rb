@@ -1,12 +1,11 @@
 class SearchesController < ApplicationController
   def index
-    @tasks = Task.all
-    @scammers = Scammer.all
+    # Result search from Elasticsearch
+    @tasks = Task.all.search(params[:query]).records.per(10).page(params[:page]).order("created_at DESC")
+    @tasks = Task.all.page(params[:page]).per(10).order("created_at DESC")
+    # @scammers = Scammer.all
   end
 
-  def create
-    @message = "Yay! You selected the #{selected_record_model} with id: #{selected_record_id}"
-  end
 
   def autocomplete
     @results = Autocompleter.call(params[:query])
