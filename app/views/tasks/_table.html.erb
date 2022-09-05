@@ -1,37 +1,48 @@
-<div>
-  <table class="table">
-    <thead class="bg-primary text-white">
-      <tr>
-        <th scope="col">Date</th>
-        <th scope="col">Scam type</th>
-        <th scope="col">CEP</th>
-        <th scope="col">Money Lost</th>
-        <th scope="col">Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tasks.each do |task| %>
-        <tr>
-          <%# Parse date i18n %>
-          <td><%= task.date.strftime("%d/%m/%Y") %></td>
-          <td><%= task.scam_type %></td>
-          <%# Regex hidden last 3 digits cep %>
-          <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
-          <%# Parse money_lost i18n %>
-          <td><%= number_to_currency task.money_lost %></td>
-          <% if task.scammers.empty? %>
-            <td></td>
-          <% else %>
-            <td>
-              <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
-            </td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%# Align paginate in the center %>
-  <div class="d-flex justify-content-center">
-    <%= paginate @tasks, theme: 'bootstrap-5' %>
+<% if tasks.empty? %>
+  <% # Align the text to the center %>
+  <div class="text-center m-5">
+    <h3 style="color: red">Nenhuma denúncia encontrada</h3>
+    <h4>Por favor refaça sua busca</h4>
+    <% #path to go back indexex %>
+    <%= link_to "Voltar", tasks_path, class: "btn btn-primary" %>
   </div>
-</div>
+  <div style="height: 30vh"></div>
+<% else %>
+  <div>
+    <table class="table">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Scam type</th>
+          <th scope="col">CEP</th>
+          <th scope="col">Money Lost</th>
+          <th scope="col">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <%# Parse date i18n %>
+            <td><%= task.date.strftime("%d/%m/%Y") %></td>
+            <td><%= task.scam_type %></td>
+            <%# Regex hidden last 3 digits cep %>
+            <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
+            <%# Parse money_lost i18n %>
+            <td><%= number_to_currency task.money_lost %></td>
+            <% if task.scammers.empty? %>
+              <td></td>
+            <% else %>
+              <td>
+                <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%# Align paginate in the center %>
+    <div class="d-flex justify-content-center">
+      <%= paginate @tasks, theme: 'bootstrap-5' %>
+    </div>
+  </div>
+<% end %>
