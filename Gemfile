@@ -39,10 +39,6 @@ gem "kaminari"
 gem "kaminari-i18n"
 gem 'bootstrap5-kaminari-views'
 
-# Use elasticsearch for search
-gem 'elasticsearch-rails'
-gem 'elasticsearch-model'
-
 # Use i18n for internationalization and localization [
 gem "i18n"
 
@@ -55,7 +51,6 @@ gem "cep_brasil"
 # Use validates-correios-cep for validate brazilian zip code
 gem 'validates-correios-cep'
 gem 'correios-cep'
-
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
