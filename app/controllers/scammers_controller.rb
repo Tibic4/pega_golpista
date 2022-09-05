@@ -1,4 +1,5 @@
 class ScammersController < ApplicationController
+  searchkick
   before_action :set_task, only: %i[show new create]
 
   def show
