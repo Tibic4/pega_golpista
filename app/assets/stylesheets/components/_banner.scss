@@ -1,58 +1,94 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  height: 800px;
+  height: 75.5vh;
+  padding: 10px 0px;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                    url(https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 69px;
+  font-size: 6vh;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 2.3vh;
   color: white;
-  opacity: .7;
+  opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  // margin-top: 10px;
+  margin-top: 25px;
+}
+
+.banner strong {
+  color: #c03e3e;;
 }
 
 .container.hero {
-  width: 800px;
-  margin: auto;
+  width: 55vw;
+  height: 65vh;
+  // margin: auto;
   text-align: center;
+  // border: 1px solid;
+  // border-color: #D23333;
 }
 
 .btn-denunciar {
-  background-color: #D23333;
+  background-color: #c03e3e;
   text-decoration: none;
   border-radius: 10px;
-  padding: 20px 15px;
-  color: black;
+  padding: 20px 40px;
+  color: white;
   font-weight: bold;
   border: none;
-}
-
-.mask {
-  border-radius: 100%;
-  padding: 80px;
-}
-
-.banner {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-                    url(https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
-}
-
-.btn-banner {
-  background-color: transparent;
-  border: none;
+  margin-top: 15px;
+  font-size: 30px;
   transition: transform .2s;
 }
 
-.btn-banner:hover {
+.btn-denunciar:hover {
   transform: scale(1.01);
+  color: rgb(175, 175, 175);;
+}
+
+.btn-lista {
+  background-color: #012A4A;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 20px 40px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-top: 20px;
+  font-size: 15px;
+  width: 50%;
+  transition: transform .2s;
+}
+
+.btn-lista:hover {
+  transform: scale(1.01);
+  color: rgb(175, 175, 175);
+}
+
+.mask {
+  border-radius: 50%;
+  padding: 40px;
+  height: 50vh;
+}
+
+.container.info {
+  width: 70vh;
+  // border: 1px solid;
+  // border-color: #D23333;
+}
+
+.container.buttons {
+  width: 55vh;
+  // border: 1px solid;
+  // border-color: #D23333;
 }
