@@ -4,6 +4,7 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller{
     connect() {
     console.log("Form controller connected");
+    this.myFunction();
     }
 
     myFunction() {
@@ -13,5 +14,5 @@ export default class extends Controller{
         } else {
           list.style.display = "none";
         }
-    }
+      }
 }
