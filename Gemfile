@@ -39,6 +39,10 @@ gem "kaminari"
 gem "kaminari-i18n"
 gem 'bootstrap5-kaminari-views'
 
+# Use elasticsearch for search
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
+
 # Use i18n for internationalization and localization [
 gem "i18n"
 

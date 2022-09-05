@@ -1,14 +1,18 @@
-#form{
-  background-color: #012A4A;
+.container {
+  width: 100vh;
+}
+
+#form-container{
+  background-color: #012a4a8c;
   width: 50vw;
-  height: 86vh;
   margin-top: 40px;
   border: 1px solid;
   border-radius: 10px;
   padding: 10px;
 }
-.container {
-  width: 1000px;
+
+.container-extra:none{
+  background-color: white;
 }
 
 .form-inputs {
