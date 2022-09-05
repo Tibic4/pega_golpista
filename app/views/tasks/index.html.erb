@@ -1,8 +1,15 @@
 <div></div>
 <div style="height: 5vh"></div>
-<div class="d-flex flex-row-reverse bd-highlight" style="margin-right: 5%">
+<div class="d-flex justify-content-between" style="margin-right: 5vw; margin-left: 5vw">
+  <h3>Mapa de Denúncias</h3>
   <h3>Denúncias Registradas <span style="color: red;"><%= @total_scammers %></span></h3>
 </div>
-<%= render partial: "zones/map" %>
-<%= render 'search', tasks: @tasks %>
+<div class='row'>
+  <div class='col-12 col-md-4'>
+    <%= render partial: "search" %>
+  </div>
+  <div class='col-12 col-md-8'>
+    <%= render partial: "zones/map" %>
+  </div>
+</div>
 <%= render 'table', tasks: @tasks %>

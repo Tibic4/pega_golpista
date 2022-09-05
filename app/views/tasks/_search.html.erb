@@ -1,16 +1,29 @@
-<%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
-  <%= text_field_tag :search,
-          params[:search],
-          class: "form-control",
-          placeholder: "Pesquise por tipo de golpe" %>
-  <%= date_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Pesquise por data" %>
-  <%= text_field_tag :zip,
-          params[:zip],
-          class: "form-control",
-          placeholder: "Pesquise por cep" %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <%= link_to "Limpar", tasks_path, class: "btn btn-secondary" %>
-<% end %>
+<div class="card" style="width: 30rem;">
+  <div class="card-header bg-primary text-white" style="margin-top: 1rem;">
+    <h3 class="card-title pt-1 text-center">Pesquisar</h3>
+  </div>
+  <div class="card-body">
+    <%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
+      <div class="list-group list-group-flush">
+        <div class="list-group-item">
+          <%= label_tag :scam_type, "Tipo de Golpe" %>
+          <%= text_field_tag :search, params[:search],class: "form-control",placeholder: "Pesquise por tipo de golpe" %>
+        </div>
+        <div class="list-group-item">
+          <%= label_tag :cep, "CEP" %>
+          <%= text_field_tag :zip, params[:zip], class: "form-control", placeholder: "Pesquise por cep" %>
+        </div>
+        <div class="list-group-item">
+          <%= label_tag :date, "Data" %>
+          <%= date_field_tag :query, params[:query], class: "form-control", placeholder: "Pesquise por data" %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer" style="margin-top: 5%">
+      <div class="d-flex justify-content-between">
+        <%= submit_tag "Pesquisar", class: "btn btn-primary" %>
+        <%= link_to "Limpar", tasks_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
