@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="form-container">
   <div data-controller="form">
     <%= simple_form_for(@task) do |f| %>
       <%= f.error_notification %>
@@ -8,20 +8,24 @@
         <%= f.input :date, as: :date, order: [:day, :month, :year], label: "Data", input_html: { value: Date} %>
         <%= f.input :scam_type, label: "Tipo de golpe" %>
         <%= f.input :cep, required: true, label: "CEP" %>
+        <div class="btn btn-primary" data-action="click->form#myFunction" >
+          Mais informações
+        </div>
       </div>
       <%# Simple fields for :scammer %>
-      <div class="form-inputs" id="form-toggle">
-        <%= f.input :money_lost, label: "Quantia perdida" %>
-        <%= f.simple_fields_for :scammer do |scammer| %>
-          <%= scammer.input :name, required: false, label: "Nome usado pelo golpista" %>
-          <%= scammer.input :email, required: false, label: "Email usado pelo golpista" %>
-          <%= scammer.input :phone, required: false, label: "Telefone usado pelo golpista" %>
-          <%= scammer.input :website, required: false, label: "Site ou plataforma onde ocorreu golpe" %>
-          <%= scammer.input :description, required: false, label: "Descrição do golpe" %>
-        <% end %>
-      <div class="form-actions">
-        <%= f.button :submit %>
+      <div class="container-extra">
+        <div class="form-inputs" id="form-toggle">
+          <%= f.input :money_lost, label: "Quantia perdida" %>
+          <%= f.simple_fields_for :scammer do |scammer| %>
+            <%= scammer.input :name, required: false, label: "Nome usado pelo golpista" %>
+            <%= scammer.input :email, required: false, label: "Email usado pelo golpista" %>
+            <%= scammer.input :phone, required: false, label: "Telefone usado pelo golpista" %>
+            <%= scammer.input :website, required: false, label: "Site ou plataforma onde ocorreu golpe" %>
+            <%= scammer.input :description, required: false, label: "Descrição do golpe" %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
+

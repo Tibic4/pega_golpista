@@ -12,6 +12,7 @@
 @import "pages/index";
 
 
+
 .body, ul, li, p {
     bottom: 0;
     margin: 0;
@@ -19,6 +20,7 @@
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    width: 100vw;
 }
 
 a{
