@@ -6,10 +6,13 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    # Verify if keyword is present
-    if params[:keyword].present?
-      @tasks = Task.search params[:keywords],
-                           fields: %i[date scam_type cep].page(params[:page]).per(10).order("created_at DESC")
+    # Verify if query is present
+    if params[:query].present?
+      @tasks = Task.search params[:query],
+                           fields: %i[date scam_type cep]
+    elsif params[:search].present?
+      @tasks = Task.search params[:date],
+                           fields: %i[date]
     else
       @tasks = Task.all.page(params[:page]).per(10).order("created_at DESC")
     end
