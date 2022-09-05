@@ -1,4 +1,4 @@
 class Scammer < ApplicationRecord
-  searchkick
+  # searchkick
   belongs_to :task
 end
