@@ -8,11 +8,7 @@ class TasksController < ApplicationController
   def index
     # Verify if query is present
     if params[:query].present?
-      @tasks = Task.search params[:query],
-                           fields: %i[date scam_type cep]
-    elsif params[:search].present?
-      @tasks = Task.search params[:date],
-                           fields: %i[date]
+      @tasks = Task.advanced_search(params[:query])
     else
       @tasks = Task.all.page(params[:page]).per(10).order("created_at DESC")
     end

@@ -1,18 +1,4 @@
-<div class="index">
-  <%# #Search bar start %>
-  <div>
-    <%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Pesquise por tipo de golpe" %>
-      <%= date_field_tag :search,
-          params[:search],
-          class: "form-control",
-          placeholder: "Pesquise por Data" %>
-      <%= submit_tag "Search", class: "btn btn-warning" %>
-    <% end %>
-  </div>
+<div>
   <table class="table">
     <thead class="bg-primary text-white">
       <tr>
@@ -48,3 +34,4 @@
   <div class="d-flex justify-content-center">
     <%= paginate @tasks, theme: 'bootstrap-5' %>
   </div>
+</div>
