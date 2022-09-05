@@ -1,11 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Golpes</h1>
-
-<%= link_to "New task", new_task_path %>
-
-
-
-
-<%# Render Tasks %>
+<div></div>
+<div style="height: 5vh"></div>
+<div class="d-flex justify-content-between" style="margin-right: 5vw; margin-left: 5vw">
+  <h3>Mapa de Denúncias</h3>
+  <h3>Denúncias Registradas <span style="color: red;"><%= @total_scammers %></span></h3>
+</div>
+<div class='row'>
+  <div class='col-12 col-md-4'>
+    <%= render partial: "search" %>
+  </div>
+  <div class='col-12 col-md-8'>
+    <%= render partial: "zones/map" %>
+  </div>
+</div>
 <%= render 'table', tasks: @tasks %>

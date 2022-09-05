@@ -30,6 +30,10 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
+# ElasticSearch for Rails and SearcKick
+gem "elasticsearch", "< 7.14" # to use a supported version of the Elasticsearch Ruby client
+gem "searchkick", "~> 4.0"
+
 # Use Kaminari for pagination
 gem "kaminari"
 gem "kaminari-i18n"

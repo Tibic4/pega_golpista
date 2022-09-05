@@ -1,5 +1,4 @@
 class Scammer < ApplicationRecord
-  include Elasticsearch::Model
-  include Searchable
+  searchkick
   belongs_to :task
 end
