@@ -1,4 +1,4 @@
-<% if tasks.empty? %>
+<% if @tasks.empty? %>
   <% # Align the text to the center %>
   <div class="text-center m-5">
     <h3 style="color: red">Nenhuma denúncia encontrada</h3>
@@ -12,11 +12,11 @@
     <table class="table">
       <thead class="bg-primary text-white">
         <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Scam type</th>
+          <th scope="col">Data</th>
+          <th scope="col">Tipo de Golpe</th>
           <th scope="col">CEP</th>
-          <th scope="col">Money Lost</th>
-          <th scope="col">Details</th>
+          <th scope="col">Dinheiro Perdido</th>
+          <th scope="col">Detalhes</th>
         </tr>
       </thead>
       <tbody>

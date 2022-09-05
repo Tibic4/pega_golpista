@@ -1,23 +1,8 @@
+<div></div>
 <div style="height: 5vh"></div>
-<%# search bar start %>
-<%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
-  <div class="input-group mt-2">
-    <%= text_field_tag :search,
-          params[:search],
-          class: "form-control",
-          placeholder: "Pesquise por tipo de golpe" %>
-    <%= date_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Pesquise por data" %>
-    <%= text_field_tag :zip,
-          params[:zip],
-          class: "form-control",
-          placeholder: "Pesquise por cep" %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <%= link_to "Clear", tasks_path, class: "btn btn-secondary" %>
-  <% end %>
+<div class="d-flex flex-row-reverse bd-highlight" style="margin-right: 5%">
+  <h3>Denúncias Registradas <span style="color: red;"><%= @total_scammers %></span></h3>
 </div>
-<%# search bar end %>
-<%# Render Tasks %>
+<%= render partial: "zones/map" %>
+<%= render 'search', tasks: @tasks %>
 <%= render 'table', tasks: @tasks %>
