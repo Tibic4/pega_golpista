@@ -94,7 +94,7 @@ export default class extends Controller {
 
     var mapOptions = {
       // Set Center
-      zoom: 8,
+      zoom: 6,
       styles: mapStyles,
       // mapTypeId: google.maps.MapTypeId.ROADMAP,
       zoomControl: true,
@@ -154,7 +154,7 @@ export default class extends Controller {
               },
               label: {
                 text: `${scammer.count_of_scammers}`,
-                color: "white",
+                color: "black",
                 fontSize: "16px",
                 fontWeight: "bold",
               },
@@ -168,7 +168,7 @@ export default class extends Controller {
               },
               label: {
                 text: `${scammer.count_of_scammers}`,
-                color: "white",
+                color: "black",
                 fontSize: "16px",
                 fontWeight: "bold",
               },
@@ -182,7 +182,7 @@ export default class extends Controller {
               },
               label: {
                 text: `${scammer.count_of_scammers}`,
-                color: "white",
+                color: "black",
                 fontSize: "16px",
                 fontWeight: "bold",
               },
