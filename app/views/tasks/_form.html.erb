@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="form">
+  <div data-controller="form">
     <%= simple_form_for(@task) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -8,10 +8,10 @@
         <%= f.input :date, as: :date, order: [:day, :month, :year], label: "Data", input_html: { value: Date} %>
         <%= f.input :scam_type, label: "Tipo de golpe" %>
         <%= f.input :cep, required: true, label: "CEP" %>
-        <%= f.input :money_lost, label: "Quantia perdida" %>
       </div>
       <%# Simple fields for :scammer %>
-      <div class="form-inputs">
+      <div class="form-inputs" id="form-toggle">
+        <%= f.input :money_lost, label: "Quantia perdida" %>
         <%= f.simple_fields_for :scammer do |scammer| %>
           <%= scammer.input :name, required: false, label: "Nome usado pelo golpista" %>
           <%= scammer.input :email, required: false, label: "Email usado pelo golpista" %>
