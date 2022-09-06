@@ -107,7 +107,7 @@ class TasksController < ApplicationController
 
   @scam_types = ["whatsapp", "site", "email", "instagram"]
 
-  # Render map
+  # Render the map
 
   def map
     @zones = Zone.where.not(latitude: nil, longitude: nil) # returns zones with coordinates
