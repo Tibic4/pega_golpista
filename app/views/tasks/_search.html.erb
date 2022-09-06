@@ -1,13 +1,4 @@
-<%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
-  <%= label_tag :scam_type, "Tipo de Golpe" %>
-  <%= text_field_tag :search, params[:search],class: "form-control",placeholder: "Pesquise por tipo de golpe" %>
-  <%= label_tag :cep, "CEP" %>
-  <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
-  <%= label_tag :date, "Data" %>
-  <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
-  <%= submit_tag "Pesquisar", class: "btn btn-primary" %>
-  <%= link_to "Limpar", tasks_path, class: "btn btn-secondary" %>
-<% end %>
+
 <div class="input-group mb-4">
   <input type="text" class="form-control" id="advanced-search-input" placeholder="Tipo de Golpe" />
   <input type="integer" class="form-control" id="advanced-search-input" placeholder="CEP" />
@@ -19,3 +10,29 @@
     <i class="fa fa-times"></i>
   </button>
 </div>
+
+<%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
+  <%= label_tag :scam_type, "Tipo de Golpe" %>
+  <%= text_field_tag :search, params[:search],class: "form-control",placeholder: "Pesquise por tipo de golpe" %>
+  <%= label_tag :cep, "CEP" %>
+  <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
+  <%= label_tag :date, "Data" %>
+  <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
+  <%= submit_tag "Pesquisar", class: "btn btn-primary" %>
+  <%= link_to "Limpar", tasks_path, class: "btn btn-secondary" %>
+<% end %>
+
+
+<%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
+<div class="input-group mb-4">
+  <input type="text" class="form-control" id="advanced-search-input" placeholder="Tipo de Golpe" <% text_field_tag :search, params[:search] %> />
+  <input type="integer" class="form-control" id="advanced-search-input" placeholder="CEP" <%  text_field_tag :zip, params[:zip] %> />
+  <input type="date" class="form-control" id="advanced-search-input" placeholder="DATA" <% date_field_tag :query, params[:query] %>/>
+  <button class="btn btn-primary" id="advanced-search-button" type="button">
+    <i class="fa fa-search"><% submit_tag "Pesquisar" %></i>
+  </button>
+  <button class="btn btn-secondary" id="advanced-search-button" type="button">
+    <i class="fa fa-times"><% link_to "Limpar", tasks_path %></i>
+  </button>
+</div>
+<% end %>
