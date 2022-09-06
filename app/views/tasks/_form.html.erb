@@ -5,11 +5,12 @@
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form-inputs">
-
-          <%# f.input :date, required: true, as: :date, order: [:day, :month, :year], label: "DATA DO GOLPE", input_html: { value: Date} %>
-          <%= f.input :scam_type, required: true, label: "TIPO DE GOLPE", collection: Scammer::FRAUDS %>
-          <%= f.input :cep, required: true, label: "SEU CEP" %>
-
+          <%# Disable date input %>
+          <%= f.input :date, as: :date, label: "Data", input_html: { value: Date.today }, disabled: true %>
+          <%# <%= f.input :date, required: true, as: :date, order: [:day, :month, :year], label: "DATA DO GOLPE", input_html: { value: Date} %>
+          <% select_options = Task::SCAM_TYPE %>
+          <%= f.input :scam_type, required: false, collection: select_options, label: "TIPO DE GOLPE", input_html: { class: "form-select" } %>
+          <%= f.input :cep, required: false, label: "SEU CEP" %>
           <div class="form-actions">
             <%= f.button :submit%>
           </div>
