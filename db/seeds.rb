@@ -252,7 +252,7 @@ zone = Zone.new
 zone.ddd = 33
 zone.region = "Gorvernador Valadares"
 zone.longitude = -41.95553
-zone.latitude = 18.854452
+zone.latitude = -18.854452
 zone.count_of_scammers = rand(1..100)
 zone.save
 

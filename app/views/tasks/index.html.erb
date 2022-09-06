@@ -5,11 +5,11 @@
   <h3>Denúncias Registradas <span style="color: red;"><%= @total_scammers %></span></h3>
 </div>
 <div class='row' style="margin-right: 5vw; margin-left: 4vw">
-  <div class='col-12 col-md-4'>
-    <%= render partial: "search" %>
-  </div>
-  <div class='col-12 col-md-8'>
+  <div >
     <%= render partial: "zones/map" %>
   </div>
+</div>
+<div style="margin-top: 5vh">
+<%= render partial: "search" %>
 </div>
 <%= render 'table', tasks: @tasks %>
