@@ -2,16 +2,16 @@
   background-size: cover;
   background-position: center;
   height: 90vh;
-  padding: 60px 0px;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-                    url(https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+  padding: 3rem 0px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
 
 }
 
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-size: 6vh;
   font-weight: bold;
   margin-top: 5px;
@@ -20,13 +20,14 @@
 .banner p {
   font-size: 2.3vh;
   color: white;
-  opacity: .8;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-top: 25px;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
 }
 
 .banner strong {
-  color: #c03e3e;;
+  color: #c03e3e;
+  ;
 }
 
 .container.hero {
@@ -46,14 +47,16 @@
   color: white;
   font-weight: bold;
   border: none;
-  margin-top: 15px;
+  margin-top: 2.5rem;
+  font-size: 2.3vh;
   font-size: 30px;
   transition: transform .2s;
 }
 
 .btn-denunciar:hover {
   transform: scale(1.01);
-  color: rgb(175, 175, 175);;
+  color: rgb(175, 175, 175);
+  ;
 }
 
 .btn-lista {
@@ -76,15 +79,16 @@
 }
 
 .mask {
-  border-radius: 50%;
+  border-radius: 10%;
   padding: 40px;
   height: 50vh;
 }
 
 .container.info {
-  width: 70vh;
+  width: 85vh;
   // border: 1px solid;
   // border-color: #D23333;
+  max-width: 100%;
 }
 
 .container.buttons {

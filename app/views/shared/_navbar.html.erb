@@ -10,16 +10,10 @@
     <div class="nav-list">
       <ul class="navbar-nav">
         <li class="nav-item" id="nav-a">
-          <%= link_to "REPORTAR", root_path(anchor: "report"), class: "nav-link reportar" %>
+          <%= link_to "DENUNCIAR", "tasks/new", class: "nav-link denunciar" %>
         </li>
         <li class="nav-item" id="nav-b">
-          <%= link_to "TIPO DE FRAUDES", root_path(anchor: "fraudes"), class: "nav-link fraudes" %>
-        </li>
-        <li class="nav-item" id="nav-c">
-          <%= link_to "PREVENÇÃO", root_path(anchor: "prevencao"), class: "nav-link prevencao" %>
-        </li>
-        <li class="nav-item" id="nav-d">
-          <%= link_to "SOBRE NÓS", root_path(anchor: "sobre nós"), class: "nav-link sobre" %>
+          <%= link_to "VER DENÚNCIAS", "tasks", class: "nav-link ver" %>
         </li>
       </ul>
     </div>
