@@ -22,7 +22,7 @@ class TasksController < ApplicationController
                                                  page: params[:page], per_page: 10)
 
     elsif params[:query].present? && params[:search].blank? && params[:zip].blank?
-      @tasks = Task.search(params[:query], page: params[:page], per_page: 10)
+      @tasks = Task.where(date: params[:query]).page(params[:page]).per(10)
 
     elsif params[:query].present? && params[:search].blank? && params[:zip].present?
       @tasks = Task.where(date: params[:query], cep: params[:zip]).page(params[:page]).per(10).order("created_at DESC")
@@ -105,7 +105,7 @@ class TasksController < ApplicationController
 
   # Scam types for select
 
-  @scam_types = ["whatsapp", "telefone", "email", "facebook", "instagram", "outros"]
+  @scam_types = ["whatsapp", "site", "email", "instagram"]
 
   # Render map
 
