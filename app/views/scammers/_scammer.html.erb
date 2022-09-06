@@ -1,23 +1,35 @@
+<%# <% Email replace method %>
+<% def replace_email(email) %>
+<%  if email.split('@')[0].length <= 5 %>
+  <%    email.gsub(/(?<=.{1}).(?=[^@]*?@)/, '*') %>
+<% else %>
+  <%   email.gsub(/(?<=.{4}).(?=.*@)/, '*')%>
+<% end %>
+<% end %>
+<%# <% Phone replace method %>
+<% def replace_phone(phone) %>
+<%   phone.gsub(/(?<=.{2}).(?=.{4})/, '*') %>
+<% end %>
 <%# Show scammers details %>
 <div id="<%= dom_id @scammer %>">
   <p>
-    <strong>Name</strong>
+    <strong>Nome usado pelo golpista:</strong>
     <%= @scammer.name %>
   </p>
   <p>
-    <strong>Email</strong>
-    <%=@scammer.email %>
+    <strong>Email:</strong>
+    <%= replace_email(@scammer.email) %>
   </p>
   <p>
-    <strong>Phone</strong>
-    <%= @scammer.phone %>
+    <strong>Telefone:</strong>
+    <%= replace_phone(@scammer.phone) %>
   </p>
   <p>
-    <strong>Website</strong>
+    <strong>Website:</strong>
     <%= @scammer.website %>
   </p>
   <p>
-    <strong>Description</strong>
+    <strong>Descrição:</strong>
     <%= @scammer.description %>
   </p>
 </div>

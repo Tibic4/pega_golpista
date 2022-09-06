@@ -117,6 +117,10 @@ GEM
       elasticsearch-transport (= 7.13.3)
     elasticsearch-api (7.13.3)
       multi_json
+    elasticsearch-model (7.2.1)
+      activesupport (> 3)
+      elasticsearch (~> 7)
+      hashie
     elasticsearch-transport (7.13.3)
       faraday (~> 1)
       multi_json
@@ -351,6 +355,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   elasticsearch (< 7.14)
+  elasticsearch-model
   faker
   font-awesome-sass (~> 6.1)
   geocoder

@@ -1,16 +1,17 @@
-<div>
+<div style="min-height: 65vh">
   <div class="container" id="form-container">
     <div data-controller="form">
       <%= simple_form_for(@task) do |f| %>
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
         <div class="form-inputs">
+
           <%# f.input :date, required: true, as: :date, order: [:day, :month, :year], label: "DATA DO GOLPE", input_html: { value: Date} %>
           <%= f.input :scam_type, required: true, label: "TIPO DE GOLPE", collection: Scammer::FRAUDS %>
           <%= f.input :cep, required: true, label: "SEU CEP" %>
+
           <div class="form-actions">
-            <%= f.button :submit %>
+            <%= f.button :submit%>
           </div>
           <div class="btn btn-primary" data-action="click->form#myFunction" >
             Acrescentar mais detalhes </div>
