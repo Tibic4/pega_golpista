@@ -1,7 +1,8 @@
 .navbar{
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(180deg, rgba(1,42,74,1) 0%, rgba(1,42,74,1) 40%, rgba(1,42,74,0.9) 100%);
+  background: linear-gradient(180deg, rgba(1,42,74,1) 0%, rgba(1,42,74,1) 40%, rgba(1,42,74,0.8) 100%);
+  opacity: 0.95;
 }
 
 .logo{
@@ -42,11 +43,11 @@
   color: white;
 }
 
-.reportar:hover {
+.denunciar:hover {
   color: rgb(175, 175, 175);
 }
 
-.fraudes:hover {
+.ver:hover {
   color: rgb(175, 175, 175);
 }
 
@@ -59,17 +60,17 @@
 }
 
 #nav-a{
-  width: 100px;
+  width: 6.25rem;
 }
 
 #nav-b{
-  width: 160px;
+  width: 10rem;
 }
 
 #nav-c{
-  width: 110px;
+  width: 6.85rem;
 }
 
 #nav-d{
-  width: 110px;
+  width: 6.85rem;
 }
