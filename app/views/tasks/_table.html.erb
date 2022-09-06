@@ -23,7 +23,7 @@
         <% @tasks.each do |task| %>
           <tr>
             <%# Parse date i18n %>
-            <td><%= task.date.strftime("%d/%m/%Y") %></td>
+            <td><%= l task.created_at, format: "%d/%m/%Y" %></td>
             <td><%= task.scam_type %></td>
             <%# Regex hidden last 3 digits cep %>
             <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>

@@ -19,5 +19,8 @@ application.register("navbar", NavbarController)
 import RemoteModalController from "./remote_modal_controller"
 application.register("remote-modal", RemoteModalController)
 
+import TasksController from "./tasks_controller"
+application.register("tasks", TasksController)
+
 import TesteController from "./teste_controller"
 application.register("teste", TesteController)
