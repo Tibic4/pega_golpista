@@ -22,7 +22,7 @@ class TasksController < ApplicationController
                                                  page: params[:page], per_page: 10)
 
     elsif params[:query].present? && params[:search].blank? && params[:zip].blank?
-      @tasks = Task.search_data(params[:query], page: params[:page], per_page: 10)
+      @tasks = Task.search(params[:query], page: params[:page], per_page: 10)
 
     elsif params[:query].present? && params[:search].blank? && params[:zip].present?
       @tasks = Task.where(date: params[:query], cep: params[:zip]).page(params[:page]).per(10).order("created_at DESC")
