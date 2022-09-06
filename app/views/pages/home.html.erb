@@ -1,25 +1,30 @@
 <%#= render 'zones/map' %>
-<%= render 'shared/banner' %>
+<div class="banner">
+  <div class="container hero">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
+      <%# <button class="btn-banner"> %>
+      <div class="container info">
+        <h1>Ajude-nos a avisar outras pessoas!</h1>
+        <p>O PegaGolpista é o site Nº 1 em <strong>rastreamento</strong>, <strong>denúncias</strong> e <strong>informações</strong> sobre os mais diferentes tipos de golpes.</p>
+        <p>Caso queira fazer uma <strong>denúncia</strong> ou ver as denúncias publicadas, poderá encontrar o nosso formulário e as denúncias clicando nos botões abaixo.</p>
+      <%# </button> %>
+      </div>
+    </div>
+    <div class="container buttons">
+      <div class="row d-flex justify-content-center">
+      <a href="tasks/new" class="btn-denunciar">DENUNCIAR</a>
+      <a href="tasks" class="btn-lista">VER DENÚNCIAS</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%# <div class="container">
-    <div class="items">
-        <section id="report">
-            <%= render "tasks/form"%>
-        <%# </section>
-
-
-        <section id="mapa">
-
-        <%# <section>
-            <%= render "tasks/table"%>
-        <%# </section>
-
-        <section id="fraudes">
-            <%= render 'pages/types_of_fraud' %>
+<%# <div class="container"> %>
+        <%# <section id="fraudes"> %>
+            <%# <%= render 'pages/types_of_fraud' %>
         <%# </section> %>
 
-        <%# <section id="prevencao">
-            <%= render 'pages/prevention' %>
-        <%# </section>
-    </div>
-</div> %>
+        <%# <section id="prevencao"> %>
+            <%# <%= render 'pages/prevention' %>
+        <%# </section> %>
+<%# </div> %>
