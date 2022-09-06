@@ -11,7 +11,16 @@
 @import "components/index";
 @import "pages/index";
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ -webkit-appearance: none;
+ margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+ -moz-appearance: textfield;
+}
 
 body, ul, li, p {
     bottom: 0;
