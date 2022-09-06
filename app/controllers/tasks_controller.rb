@@ -6,6 +6,10 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
+    respond_to do |format|
+      format.html
+      format.text { render partial: "tasks", locals: { tasks: Task.all }, formats: [:html] }
+    end
     map
     # Search
     if params[:search].present? && params[:query].blank? && params[:zip].blank?
@@ -102,8 +106,6 @@ class TasksController < ApplicationController
     hash = dddi.select { |ddd| ddd["ddd"] }
     @ddd = hash["ddd"].to_i
   end
-
-
 
   # Render the map
 
