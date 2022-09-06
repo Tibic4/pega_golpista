@@ -103,9 +103,7 @@ class TasksController < ApplicationController
     @ddd = hash["ddd"].to_i
   end
 
-  # Scam types for select
 
-  @scam_types = ["whatsapp", "site", "email", "instagram"]
 
   # Render the map
 

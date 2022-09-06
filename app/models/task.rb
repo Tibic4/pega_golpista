@@ -5,4 +5,8 @@ class Task < ApplicationRecord
   accepts_nested_attributes_for :scammers, allow_destroy: true
   # validates :cep, correios_cep: true
   searchkick
+
+  # Scam types for select
+
+  SCAM_TYPE = ["whatsapp", "site", "email", "instagram"]
 end
