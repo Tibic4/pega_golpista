@@ -101,10 +101,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-group :production do
-  # Use Heroku to deploy [https://devcenter.heroku.com/articles/getting-started-with-rails6]
-  gem "rails_12factor"
-  gem "elasticsearch", "< 7.14" # to use a supported version of the Elasticsearch Ruby client
-  gem "searchkick", "~> 4.0"
-end
