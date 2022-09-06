@@ -3,6 +3,13 @@
   justify-content: space-between;
   background: linear-gradient(180deg, rgba(1,42,74,1) 0%, rgba(1,42,74,1) 40%, rgba(1,42,74,0.8) 100%);
   opacity: 0.95;
+  height: 12vh;
+}
+
+.container.nav {
+  width: 100vw;
+  // border: 1px solid;
+  // color: red;
 }
 
 .logo{
@@ -65,12 +72,4 @@
 
 #nav-b{
   width: 10rem;
-}
-
-#nav-c{
-  width: 6.85rem;
-}
-
-#nav-d{
-  width: 6.85rem;
 }
