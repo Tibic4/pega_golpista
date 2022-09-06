@@ -33,6 +33,7 @@ gem "jbuilder"
 # ElasticSearch for Rails and SearcKick
 gem "elasticsearch", "< 7.14" # to use a supported version of the Elasticsearch Ruby client
 gem "searchkick", "~> 4.0"
+gem 'elasticsearch-model'
 
 # Use Kaminari for pagination
 gem "kaminari"
