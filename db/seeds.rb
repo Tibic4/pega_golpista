@@ -13,19 +13,11 @@ puts 'Criando novos dados...'
 
 100.times do
   ceps = CepBrasil::Random.generate_formatted.to_s.gsub('-', '')
-
-  def validates_cep(ceps)
-    if Correios::CEP::AddressFinder.get(ceps).empty?
-      return "38748602"
-    else
-      return ceps
-    end
-  end
+  puts ceps
   task = Task.new
   task.date = Faker::Date.between(from: 2.days.ago, to: Date.today)
   task.scam_type = ["whastapp", "sms", "email", "phone"].sample
-  cepi = validates_cep(ceps)
-  task.cep = cepi.to_i
+  task.cep = ceps.to_i
   task.money_lost = rand(1000..10_000)
   task.save!
   telefone = Faker::PhoneNumber.cell_phone

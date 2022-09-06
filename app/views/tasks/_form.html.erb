@@ -8,7 +8,7 @@
           <%# Disable date input %>
           <%= f.input :date, as: :date, label: "Data", input_html: { value: Date.today }, disabled: true %>
           <%# <%= f.input :date, required: true, as: :date, order: [:day, :month, :year], label: "DATA DO GOLPE", input_html: { value: Date} %>
-          <% select_options = @scam_types %>
+          <% select_options::SCAM_TYPE %>
           <%= f.input :scam_type, required: false, collection: select_options, label: "TIPO DE GOLPE", input_html: { class: "form-select" } %>
           <%= f.input :cep, required: false, label: "SEU CEP" %>
           <div class="d-flex justify-content-between">
