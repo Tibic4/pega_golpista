@@ -188,8 +188,12 @@ export default class extends Controller {
               },
             });
           }
+
         }
       });
     });
+  }
+  fly() {
+    console.log("flying");
   }
 }

@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import debounce from "debounce";
 
 
 // Connects to data-controller="tasks"
