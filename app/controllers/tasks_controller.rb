@@ -29,7 +29,8 @@ class TasksController < ApplicationController
       @tasks = Task.where(date: params[:query]).page(params[:page]).per(10)
 
     elsif params[:query].present? && params[:search].blank? && params[:zip].present?
-      @tasks = Task.where(date: params[:query], cep: params[:zip]).page(params[:page]).per(10).order("created_at DESC")
+      @tasks = Task.where(date: params[:query],
+                          cep: params[:zip]).page(params[:page]).per(10).order("created_at DESC")
 
     elsif params[:zip].present? && params[:search].blank? && params[:query].blank?
       @tasks = Task.where(cep: params[:zip]).page(params[:page]).per(10).order("created_at DESC")
@@ -56,24 +57,24 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-    if @task.save
-      respond_to do |format|
-        # Save nested form scammer data
-        @scammer = Scammer.new(scammer_params[:scammer])
-        @scammer.task_id = @task.id
-        @scammer.save
+    # raise
+    if @task.save && Zone.find_by(ddd: set_ddd).present?
 
-        # Save count in ddd table
-        Zone.find_by(ddd: set_ddd).increment!(:count_of_scammers)
-        # end
+      # Save nested form scammer data
+      @scammer = Scammer.new(scammer_params[:scammer])
+      @scammer.task_id = @task.id
+      @scammer.save
 
-        # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
-        format.html { redirect_to tasks_url(@task), notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @task }
-      end
+      # Save count in ddd table
+      Zone.find_by(ddd: set_ddd).increment!(:count_of_scammers)
+      # end
+
+      # Zone.create(task_id: @task.id, ddd: set_ddd, count: +1) not working, create a new row
+      redirect_to tasks_path, flash: { success: "Obrigado por compartilhar sua experiência!" }
+      #  flash.now[:alert] = "Task was successfully created."
+
     else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @task.errors, status: :unprocessable_entity }
+      render :new, status: :unprocessable_entity
     end
   end
 
