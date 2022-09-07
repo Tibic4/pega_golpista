@@ -35,7 +35,7 @@
             <% end %>
             <% # Check Scammer is empty %>
             <% if task.scammers.pluck(:name, :phone, :email, :website).flatten.delete_if(&:empty?).empty? %>
-              <td>OI</td>
+              <td>N/A</td>
             <% else %>
               <td>
                 <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
