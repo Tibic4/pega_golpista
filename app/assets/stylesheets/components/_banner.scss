@@ -20,15 +20,15 @@
 .banner p {
   font-size: 2.7vh;
   color: white;
-  opacity: .9;
+  opacity: .95;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   margin-top: 2rem;
 }
 
-.banner strong {
-  color: #c03e3e;
+// .banner strong {
+//   color: #c03e3e;
 
-}
+// }
 
 .container.hero {
   width: 55vw;
@@ -82,7 +82,7 @@
 }
 
 .mask {
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 40px;
   height: 50vh;
   // background-color: rgba(0, 0, 0, 1);
