@@ -10,14 +10,15 @@ Task.destroy_all
 puts 'Criando novos dados...'
 
 # validates @cep, correios_cep: true
+CEPS=["28053634","69033015","88809415","54315580","79086460","69307210","67110434","28907014","79015410","66843720"]
 
-100.times do
-  ceps = CepBrasil::Random.generate_formatted.to_s.gsub('-', '')
-  puts ceps
+10.times do |i|
+  # ceps = CepBrasil::Random.generate_formatted.to_s.gsub('-', '')
+  # puts ceps
   task = Task.new
   task.date = Faker::Date.between(from: 2.days.ago, to: Date.today)
   task.scam_type = ["whastapp", "sms", "email", "phone"].sample
-  task.cep = ceps.to_i
+  task.cep = CEPS[i]
   task.money_lost = rand(1000..10_000)
   task.save!
   telefone = Faker::PhoneNumber.cell_phone

@@ -12,12 +12,15 @@ class Task < ApplicationRecord
 
   # Parse url = "https://viacep.com.br/ws/json/" see response is true
   def valid_cep?
-    url = "https://viacep.com.br/ws/#{cep}/json/"
-    ceps = URI.open(url).read
-    cepis = JSON.parse(ceps)
-    if not cepis["erro"].blank?
-      errors.add(:cep, " inválido")
+    unless cep.empty?
+      url = "https://viacep.com.br/ws/#{cep}/json/"
+      ceps = URI.open(url).read
+      cepis = JSON.parse(ceps)
+      if not cepis["erro"].blank?
+        errors.add(:cep, " inválido")
+      end
+    else 
+      errors.add(:cep, "campo obrigatório")
     end
   end
-
 end

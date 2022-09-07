@@ -57,6 +57,7 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
+    # raise
     if @task.save && Zone.find_by(ddd: set_ddd).present?
 
       # Save nested form scammer data
