@@ -1,6 +1,5 @@
 require 'faker'
-require 'cep_brasil'
-require 'correios-cep'
+require 'csv'
 
 puts 'Exluindo dados antigos...'
 Zone.destroy_all
@@ -8,17 +7,26 @@ Scammer.destroy_all
 Task.destroy_all
 
 puts 'Criando novos dados...'
+ceps = []
+# Parse CSV file to get CEPS
+CSV.foreach('db/ceps.csv') do |row|
+  ceps << row[0].gsub(' ', '')[1...-1]
+end
+
+
+
+
 
 # validates @cep, correios_cep: true
-CEPS=["28053634","69033015","88809415","54315580","79086460","69307210","67110434","28907014","79015410","66843720"]
+# CEPS=["28053634","69033015","88809415","54315580","79086460","69307210","67110434","28907014","79015410","66843720"]
 
-10.times do |i|
-  # ceps = CepBrasil::Random.generate_formatted.to_s.gsub('-', '')
-  # puts ceps
+10.times do
+
+  p ceps
   task = Task.new
   task.date = Faker::Date.between(from: 2.days.ago, to: Date.today)
-  task.scam_type = ["whastapp", "sms", "email", "phone"].sample
-  task.cep = CEPS[i]
+  task.scam_type = Task::SCAM_TYPE.sample
+  task.cep = ceps.sample.gsub('-', '')
   task.money_lost = rand(1000..10_000)
   task.save!
   telefone = Faker::PhoneNumber.cell_phone

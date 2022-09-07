@@ -5,7 +5,7 @@ class Task < ApplicationRecord
   has_many :scammers
   accepts_nested_attributes_for :scammers, allow_destroy: true
   validates :cep, presence: true, length: { is: 8 }
-  validate :valid_cep?
+  # validate :valid_cep?
   # Scam types for select
   SCAM_TYPE = ["Whatsapp", "Site", "Email", "Instagram"]
 

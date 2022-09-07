@@ -30,6 +30,9 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
+# Use CSV to parse and generate CSV files [
+gem "csv"
+
 # Use Kaminari for pagination
 gem "kaminari"
 gem "kaminari-i18n"
