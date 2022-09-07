@@ -2,7 +2,6 @@ require "json"
 require "open-uri"
 
 class Task < ApplicationRecord
-
   has_many :scammers
   accepts_nested_attributes_for :scammers, allow_destroy: true
   validates :cep, presence: true, length: { is: 8 }
@@ -12,15 +11,13 @@ class Task < ApplicationRecord
 
   # Parse url = "https://viacep.com.br/ws/json/" see response is true
   def valid_cep?
-    unless cep.empty?
+    if cep.empty?
+      errors.add(:cep, "campo obrigatório")
+    else
       url = "https://viacep.com.br/ws/#{cep}/json/"
       ceps = URI.open(url).read
       cepis = JSON.parse(ceps)
-      if not cepis["erro"].blank?
-        errors.add(:cep, " inválido")
-      end
-    else 
-      errors.add(:cep, "campo obrigatório")
+      errors.add(:cep, " inválido") unless cepis["erro"].blank?
     end
   end
 end

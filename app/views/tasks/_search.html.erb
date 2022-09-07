@@ -1,5 +1,5 @@
 <div>
-  <%= form_with url: tasks_path, method: :get, class: "d-flex"  do %>
+  <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search_results", turbo_action: "advance", controller: "search", action: "input->search#submit"}, class: "d-flex"  do %>
     <%= text_field_tag :search, params[:search],class: "form-control", id: "advanced-search-input", placeholder: "Pesquise por tipo de golpe" %>
     <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
     <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
@@ -7,9 +7,14 @@
       action: "submit->tasks#update",
     }) do %>
       <i class="fa fa-search"></i>
-<% end %>
-<%= link_to tasks_path, class: "btn btn-secondary" do %>
-  <i class="fa fa-times"></i>
-<% end %>
-<% end %>
+    <% end %>
+    <%= link_to tasks_path, class: "btn btn-secondary" do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  <% end %>
+</div>
+<div style="margin-bottom: 5vh" data-tasks-target="table">
+  <%= turbo_frame_tag "tasks" do %>
+    <%= render partial: "table", locals: { tasks: @tasks } %>
+  <% end %>
 </div>
