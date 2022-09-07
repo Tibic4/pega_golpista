@@ -7,5 +7,5 @@ class Task < ApplicationRecord
 
   # Scam types for select
 
-  SCAM_TYPE = ["whatsapp", "site", "email", "instagram"]
+  SCAM_TYPE = ["Whatsapp", "Site", "Email", "Instagram"]
 end

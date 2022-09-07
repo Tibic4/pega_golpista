@@ -1,5 +1,5 @@
 <div style="min-height: 65vh">
-  <div class="container rounded-4"  id="form-container">
+  <div class="container rounded-4 mb-5"  id="form-container">
     <div data-controller="form" class="p-5">
       <%= simple_form_for(@task) do |f| %>
         <%= f.error_notification %>
@@ -15,12 +15,12 @@
             <div class="form-actions">
               <%= f.button :submit, value:"Denunciar", class:"btn btn-danger" %>
             </div>
-            <div class="btn btn-primary" data-action="click->form#myFunction" >
+            <div class="btn btn-outline-light" data-action="click->form#myFunction" >
               Acrescentar mais detalhes </div>
           </div>
         </div>
         <%# Simple fields for :scammer %>
-        <div class="container-extra">
+        <div class="container-extra mt-2">
           <div class="form-inputs" id="form-toggle">
             <%= f.input :money_lost, label: "Quantia perdida" %>
             <%= f.simple_fields_for :scammer do |scammer| %>
