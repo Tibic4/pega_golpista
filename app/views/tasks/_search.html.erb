@@ -1,20 +1,22 @@
-<div>
-  <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-flex"  do %>
-    <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-control", id: "advanced-search-input"%>
-    <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
-    <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
-    <%= button_tag(type: "submit", class: "btn btn-primary", data: {
-      action: "submit->tasks#update",
-    }) do %>
-      <i class="fa fa-search"></i>
+<div class="container search">
+  <div>
+    <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-flex"  do %>
+      <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-control", id: "advanced-search-input"%>
+      <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
+      <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
+      <%= button_tag(type: "submit", class: "btn btn-primary", data: {
+        action: "submit->tasks#update",
+      }) do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+      <%= link_to tasks_path, class: "btn btn-secondary" do %>
+        <i class="fa fa-times"></i>
+      <% end %>
     <% end %>
-    <%= link_to tasks_path, class: "btn btn-secondary" do %>
-      <i class="fa fa-times"></i>
+  </div>
+  <div style="margin-bottom: 5vh" data-tasks-target="table">
+    <%= turbo_frame_tag "search-results" do %>
+      <%= render partial: "table", locals: { tasks: @tasks } %>
     <% end %>
-  <% end %>
-</div>
-<div style="margin-bottom: 5vh" data-tasks-target="table">
-  <%= turbo_frame_tag "search-results" do %>
-    <%= render partial: "table", locals: { tasks: @tasks } %>
-  <% end %>
+  </div>
 </div>
