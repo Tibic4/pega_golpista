@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   // margin-top: 100px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: lightgrey;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 // .map {
 //   display: grid;
@@ -18,4 +22,8 @@
 }
 .map {
   margin-top: 40px;
+}
+.container.todo-index {
+  width: 85vw;
+  margin-bottom: 3vh;
 }
