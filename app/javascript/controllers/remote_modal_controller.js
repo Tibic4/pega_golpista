@@ -13,6 +13,7 @@ export default class extends Controller {
       event.preventDefault()
       this.element.addEventListener('hidden.bs.modal', event.detail.resume)
       this.modal.hide()
+      this.element.classList.remove("show")
     }
   }
 
