@@ -1,0 +1,32 @@
+<div>
+  <table class="table">
+    <thead class="bg-primary text-white">
+      <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Tipo de Golpe</th>
+        <th scope="col">CEP</th>
+        <th scope="col">Dinheiro Perdido</th>
+        <th scope="col">Detalhes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%# Parse date i18n %>
+        <td><%= @task.created_at %></td>
+        <td><%= @task.scam_type %></td>
+        <%# Regex hidden last 3 digits cep %>
+        <td><%= @task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
+        <% # Check money lost is nill %>
+        <%   if @task.money_lost.nil? %>
+          <td><%= "Não informado" %></td>
+        <% else %>
+          <td><%= @task.money_lost %></td>
+        <% end %>
+        <td>
+          <% # Link to delete task %>
+          <%= button_to "Deletar", task_path(@task), method: :delete, data: { confirm: "Tem certeza?" } %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

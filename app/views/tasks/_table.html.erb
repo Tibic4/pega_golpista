@@ -17,6 +17,9 @@
           <th scope="col">CEP</th>
           <th scope="col">Dinheiro Perdido</th>
           <th scope="col">Detalhes</th>
+          <% if admin_signed_in? %>
+            <th scope="col">Deletar</th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
@@ -39,6 +42,13 @@
             <% else %>
               <td>
                 <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
+              </td>
+            <% end %>
+            <% # If user Show button to redirect to task %>
+            <% if admin_signed_in? %>
+              <td>
+                <% # Link to delete task %>
+                <%= button_to "Deletar", task_path(task), method: :delete, data: { confirm: "Tem certeza?" } %>
               </td>
             <% end %>
           </tr>

@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'search', to: 'searches#index'
-  post "searches", to: "searches#create"
-  get "autocomplete", to: "searches#autocomplete"
+  devise_for :admins
   resources :tasks do
     resources :scammers, only: %i[new create show]
   end

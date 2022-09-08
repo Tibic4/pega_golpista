@@ -3,6 +3,7 @@ require "open-uri"
 
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
+  before_action :authenticate_admin!, only: %i[show destroy]
 
   # GET /tasks or /tasks.json
   def index
@@ -42,6 +43,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/1 or /tasks/1.json
   def show
+    @tasks = Task.all
+    @task = Task.find(params[:id])
   end
 
   # GET /tasks/new
@@ -91,11 +94,10 @@ class TasksController < ApplicationController
 
   def destroy
     # Only for admins
-    # @task.destroy
-
-    # respond_to do |format|
-    #   format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
-    # end
+    # @scammer = Scammer.find(task_id: @task.id)
+    # @task.scammer.destroy
+    @task.destroy
+    redirect_to tasks_url, notice: "Task was successfully destroyed."
   end
 
   # def set ddd by cep

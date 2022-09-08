@@ -2,12 +2,15 @@ require "json"
 require "open-uri"
 
 class Task < ApplicationRecord
-  has_many :scammers
+  has_many :scammers, dependent: :destroy
   accepts_nested_attributes_for :scammers, allow_destroy: true
   validates :cep, presence: true, length: { is: 8 }
-  # validate :valid_cep?
+  # Validate scam type with SCAM_TYPES
+  # validates :scam_type, inclusion: { in: SCAM_TYPES }
+  # Validate :valid_cep?
   # Scam types for select
   SCAM_TYPE = ["Whatsapp", "Site", "Email", "Instagram"]
+  SCAM_TYPE_FOR_SEARCH = ["Whatsapp", "Site", "Email", "Instagram"]
 
   # Parse url = "https://viacep.com.br/ws/json/" see response is true
   def valid_cep?
