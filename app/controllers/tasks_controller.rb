@@ -42,6 +42,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/1 or /tasks/1.json
   def show
+    @tasks = Task.all
+    @task = Task.find(params[:id])
   end
 
   # GET /tasks/new
@@ -90,12 +92,12 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    # Only for admins
-    # @task.destroy
 
-    # respond_to do |format|
-    #   format.html { redirect_to tasks_url, notice: "Task was successfully destroyed." }
-    # end
+    # Only for admins
+    # @scammer = Scammer.find(task_id: @task.id)
+    # @task.scammer.destroy
+    @task.destroy
+    redirect_to tasks_url, notice: "Task was successfully destroyed."
   end
 
   # def set ddd by cep
