@@ -10,7 +10,7 @@ class Task < ApplicationRecord
   # Validate :valid_cep?
   # Scam types for select
   SCAM_TYPE = ["Whatsapp", "Site", "Email", "Instagram"]
-  SCAM_TYPE_FOR_SEARCH = ["Whatsapp", "Site", "Email", "Instagram"]
+  SCAM_TYPE_FOR_SEARCH = ["", "Whatsapp", "Site", "Email", "Instagram"]
 
   # Parse url = "https://viacep.com.br/ws/json/" see response is true
   def valid_cep?
