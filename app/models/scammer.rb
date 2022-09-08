@@ -1,5 +1,5 @@
 class Scammer < ApplicationRecord
-  # searchkick
+  include ActiveModel::Validations
+  validates_with MyValidator
   belongs_to :task
-  FRAUDS= ["INSTAGRAM", "WHATSAPP", "SITES FRAUDULENTOS"]
 end
