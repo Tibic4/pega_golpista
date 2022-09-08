@@ -17,10 +17,12 @@
           <%= f.input :scam_type, required: false, collection: select_options, label: "TIPO DE GOLPE", input_html: { class: "form-select" } %>
           <%= f.input :cep, required: false, label: "SEU CEP" %>
           <div class="d-flex justify-content-between">
-            <div class="form-actions">
+            <div class="form-actions" 
+                 style="box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;"
+              >
               <%= f.button :submit, value:"Denunciar", class:"btn btn-danger" %>
             </div>
-            <div class="btn btn-outline-light" data-action="click->form#myFunction" >
+            <div class="btn btn-link" style="color: white" data-action="click->form#myFunction" >
               Acrescentar mais detalhes </div>
           </div>
         </div>
