@@ -1,4 +1,4 @@
-<%# <div class="container search"> %>
+<div class="container search">
   <div>
     <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-flex"  do %>
       <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-control", id: "advanced-search-input"%>
@@ -19,4 +19,4 @@
       <%= render partial: "table", locals: { tasks: @tasks } %>
     <% end %>
   </div>
-<%# </div> %>
+</div>
