@@ -5,22 +5,22 @@ puts 'Exluindo dados antigos...'
 Zone.destroy_all
 Scammer.destroy_all
 Task.destroy_all
+Admin.destroy_all
+
+Admin.create!(email: 'bicagold@gmail.com', password: 850726, password_confirmation: 850726)
 
 puts 'Criando novos dados...'
 ceps = []
 # Parse CSV file to get CEPS
 CSV.foreach('db/ceps.csv') do |row|
+  if row[0].include?('-') && (row[0].length != 9)
+    # (/[^0-9]/, '')
   ceps << row[0].gsub(' ', '')[1...-1]
+  end
 end
 
 
-
-
-
-# validates @cep, correios_cep: true
-# CEPS=["28053634","69033015","88809415","54315580","79086460","69307210","67110434","28907014","79015410","66843720"]
-
-10.times do
+100.times do
 
   p ceps
   task = Task.new
