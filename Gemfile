@@ -51,6 +51,8 @@ gem "cep_brasil"
 gem 'validates-correios-cep'
 gem 'correios-cep'
 
+# Use devise for authentication
+gem "devise"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

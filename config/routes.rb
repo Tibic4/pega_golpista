@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :admins
   resources :tasks do
     resources :scammers, only: %i[new create show]
   end
