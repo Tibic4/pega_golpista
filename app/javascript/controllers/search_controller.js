@@ -8,7 +8,7 @@ export default class extends Controller {
     this.submit = debounce(this.submit.bind(this), 300);
   }
 
-  submit(_event) {
-    this.element.requestSubmit();
-  }
+  // submit(_event) {
+  //   this.element.requestSubmit();
+  // }
 }
