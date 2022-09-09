@@ -7,14 +7,13 @@ Scammer.destroy_all
 Task.destroy_all
 Admin.destroy_all
 
-Admin.create!(email: 'bicagold@gmail.com', password: 850726, password_confirmation: 850726)
+
 
 puts 'Criando novos dados...'
 ceps = []
 # Parse CSV file to get CEPS
 CSV.foreach('db/ceps.csv') do |row|
   if row[0].include?('-') && (row[0].length != 9)
-    # (/[^0-9]/, '')
   ceps << row[0].gsub(' ', '')[1...-1]
   end
 end
