@@ -12,4 +12,4 @@ Criado no [Le Wagon coding bootcamp](https://www.lewagon.com).
 
 http://www.pegagolpista.com.br/
 
-*Este aplicativo foi desenvolvido por nossa equipe 🔝. E esta é composta por: [mim](https://github.com/Tibic4) e [Alexandre Alanna](https://github.com/AlxLanna) e [Mathues Zambone](https://github.com/Matheus-Zambone) e [José Andrade](https://github.com/comanderandradea) no bootcamp da Le Wagon São Paulo, Brasil Batch#946 Web FT.
+*Este aplicativo foi desenvolvido por nossa equipe 🔝. E esta é composta por: [mim](https://github.com/Tibic4) e [Alexandre Alanna](https://github.com/AlxLanna) e [Matheus Zambone](https://github.com/Matheus-Zambone) e [José Andrade](https://github.com/comanderandradea) no bootcamp da Le Wagon São Paulo, Brasil Batch#946 Web FT.
