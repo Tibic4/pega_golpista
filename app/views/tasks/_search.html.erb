@@ -9,9 +9,7 @@
       }) do %>
         <i class="fa fa-search"></i>
       <% end %>
-      <%= link_to tasks_path, class: "btn btn-secondary", data: {
-        action: "submit->tasks#update",
-      } do %>
+      <%= link_to tasks_path, class: "btn btn-secondary" do %>
         <i class="fa fa-times"></i>
       <% end %>
     <% end %>

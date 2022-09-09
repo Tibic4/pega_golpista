@@ -20,7 +20,7 @@ module PegaGolpista
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
+    config.force_ssl = false
     config.time_zone = "Brasilia"
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
     config.i18n.default_locale = 'pt-BR'
