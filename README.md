@@ -6,7 +6,7 @@ Criado no [Le Wagon coding bootcamp](https://www.lewagon.com).
 - Feito para realizar denúncias de golpes sofridos por meios digitais e ajudar na sua prevenção
 - Todos podem denunciar
 - O objetivo do aplicativo é ajudar na diminuição de golpes onlines
-- O aplicativo conta com um mapa mostrando golpes o número de golpes por DDD's, onde usúarios podem filtrar por regiões, tipos de golpes e data 
+- O aplicativo conta com um mapa mostrando o número de golpes por DDD's, onde usúarios podem filtrar por regiões, tipos de golpes e data 
 - O usuário ficará informado dos golpes mais frequentes em sua região
 - O app foi desenvolvido com Ruby  on Rails, HTML, JS e SCSS
 
