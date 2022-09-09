@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 import { Modal } from "bootstrap"
 
 export default class extends Controller {
-  // Connects to data-controller="remote-modal"
   connect() {
     this.modal = new Modal(this.element)
+    this.close()
     this.modal.show()
   }
 
@@ -13,10 +13,19 @@ export default class extends Controller {
       event.preventDefault()
       this.element.addEventListener('hidden.bs.modal', event.detail.resume)
       this.modal.hide()
+      this.element.classList.remove("show")
     }
   }
 
   isOpen() {
     return this.element.classList.contains("show")
+  }
+
+  //Function to close modal in reload page
+
+  close() {
+    this.element.addEventListener("hidden.bs.modal", () => {
+      this.element.remove()
+    })
   }
 }
