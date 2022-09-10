@@ -1,6 +1,8 @@
 .table {
-  max-width: 100%!important;
+  width: 100%;
+  // margin-top: 40px;
 }
+
 
 .borda{
   border: 1px solid blue
@@ -17,5 +19,17 @@
     li:nth-last-child(2) {
       display: none;
     }
+  }
+
+  .table-striped {
+    font-size: 1rem;
+  }
+
+  // Remove table date
+  .table td:nth-child(1) {
+    display: none;
+  }
+  .table th:nth-child(1) {
+    display: none;
   }
 }

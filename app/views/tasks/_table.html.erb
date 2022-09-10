@@ -1,71 +1,69 @@
-<div class="container">
-  <div class="row">
-    <% if @tasks.empty? %>
-      <% # Align the text to the center %>
-      <text-center class="col-12 text-center mt-3">
-        <h3 class="text-center" style="color: red">Nenhuma denúncia encontrada</h3>
-        <h4 class="text-primary">Por favor refaça sua busca</h4>
-        <% #path to go back indexex %>
-        <%= link_to "Voltar", tasks_path, class: "btn btn-primary" %>
-      </div>
-      <div style="height: 30vh"></div>
-    <% else %>
-      <div class="col-12">
-        <table class="table col-12">
-          <thead class="bg-primary text-white">
-            <tr>
-              <th scope="col" class="data">Data</th>
-              <th scope="col">Tipo de Golpe</th>
-              <th scope="col" class="cep">CEP</th>
-              <th scope="col">Dinheiro Perdido</th>
-              <th scope="col" class="detalhes">Detalhes</th>
-              <% if admin_signed_in? %>
-                <th scope="col">Deletar</th>
-              <% end %>
-            </tr>
-          </thead>
-          <tbody>
-            <% @tasks.each do |task| %>
-              <tr>
-                <%# Parse date i18n %>
-                <td><%= l task.created_at, format: "%d/%m/%Y" %></td>
-                <td><%= task.scam_type %></td>
-                <%# Regex hidden last 3 digits cep %>
-                <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
-                <% # Check money lost is nill %>
-                <%   if task.money_lost.nil? %>
-                  <td><%= "Não informado" %></td>
-                <% else %>
-                  <td><%= number_to_currency task.money_lost %></td>
-                <% end %>
-                <% # Check Scammer is empty %>
-                <% if task.scammers.pluck(:name, :phone, :email, :website).flatten.delete_if(&:empty?).empty? %>
-                  <td>N/A</td>
-                <% else %>
-                  <td>
-                    <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
-                  </td>
-                <% end %>
-                <% # If user Show button to redirect to task %>
-                <% if admin_signed_in? %>
-                  <td>
-                    <% # Link to delete task %>
-                    <%= button_to "Deletar", task_path(task), method: :delete, data: { confirm: "Tem certeza?" } %>
-                  </td>
-                <% end %>
-              </tr>
+<% if @tasks.empty? %>
+  <% # Align the text to the center %>
+  <div class="text-center m-5">
+    <h3 style="color: red">Nenhuma denúncia encontrada</h3>
+    <h4>Por favor refaça sua busca</h4>
+    <% #path to go back indexex %>
+    <%= link_to "Voltar", tasks_path, class: "btn btn-primary" %>
+  </div>
+  <div style="height: 30vh"></div>
+<% else %>
+  <div>
+    <table class="table mt-5">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Tipo de Golpe</th>
+          <th scope="col">CEP</th>
+          <th scope="col">Dinheiro Perdido</th>
+          <th scope="col">Detalhes</th>
+          <% if admin_signed_in? %>
+            <th scope="col">Deletar</th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <%# Parse date i18n %>
+            <td><%= l task.created_at, format: "%d/%m/%Y" %></td>
+            <td><%= task.scam_type %></td>
+            <%# Regex hidden last 3 digits cep %>
+            <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
+            <% # Check money lost is nill %>
+            <%   if task.money_lost.nil? %>
+              <td><%= "Não informado" %></td>
+            <% else %>
+              <td><%= number_to_currency task.money_lost %></td>
             <% end %>
-          </tbody>
-        </table>
-        <% # Paginate %>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="paginate d-flex justify-content-center" style="margin-top: 5%">
-                <%= paginate @tasks, theme: 'bootstrap-5' %>
-              </div>
-            </div>
-          </div>
+            <% # Check Scammer is empty %>
+            <% if task.scammers.pluck(:name, :phone, :email, :website).flatten.delete_if(&:empty?).empty? %>
+              <td>N/A</td>
+            <% else %>
+              <td>
+                <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
+              </td>
+            <% end %>
+            <% # If user Show button to redirect to task %>
+            <% if admin_signed_in? %>
+              <td>
+                <% # Link to delete task %>
+                <%= button_to "Deletar", task_path(task), method: :delete, data: { confirm: "Tem certeza?" } %>
+              </td>
+            <% end %>
+          </tr>
         <% end %>
+      </tbody>
+    </table>
+    <% # Paginate %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="paginate d-flex justify-content-center" style="margin-top: 5%">
+            <%= paginate @tasks, theme: 'bootstrap-5' %>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
+  </div>
+</div>
