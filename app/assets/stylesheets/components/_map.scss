@@ -27,3 +27,18 @@
   width: 85vw;
   margin-bottom: 3vh;
 }
+
+@media (max-width: 768px) {
+  .container.todo-index {
+    width: 100%;
+  }
+
+  .container.todo-index h3 {
+    text-align: right;
+  }
+
+  .container.todo-index h2 {
+    font-size: 1.5rem;
+  }
+
+}

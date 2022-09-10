@@ -58,3 +58,16 @@
 .ajuda:hover {
   color: #D23333;
 }
+
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: 15%;
+    padding: 20px 0px;
+  }
+
+  .footer-links {
+    margin-bottom: 20px;
+  }
+}
