@@ -1,8 +1,8 @@
 <% if @tasks.empty? %>
   <% # Align the text to the center %>
   <div class="text-center m-5">
-    <h3 style="color: red">Nenhuma denúncia encontrada</h3>
-    <h4>Por favor refaça sua busca</h4>
+    <h3 class="text-center"style="color: red">Nenhuma denúncia encontrada</h3>
+    <h4 class="text-primary mb-3">Por favor refaça sua busca</h4>
     <% #path to go back indexex %>
     <%= link_to "Voltar", tasks_path, class: "btn btn-primary" %>
   </div>
@@ -12,11 +12,11 @@
     <table class="table mt-5">
       <thead class="bg-primary text-white">
         <tr>
-          <th scope="col">Data</th>
-          <th scope="col">Tipo de Golpe</th>
-          <th scope="col">CEP</th>
-          <th scope="col">Dinheiro Perdido</th>
-          <th scope="col">Detalhes</th>
+          <th class="text-center align-middle" scope="col">Data</th>
+          <th class="text-center align-middle" scope="col">Tipo de Golpe</th>
+          <th class="text-center align-middle" scope="col">CEP</th>
+          <th class="text-center align-middle" scope="col">Dinheiro Perdido</th>
+          <th class="text-center align-middle" scope="col">Detalhes</th>
           <% if admin_signed_in? %>
             <th scope="col">Deletar</th>
           <% end %>
@@ -26,27 +26,27 @@
         <% @tasks.each do |task| %>
           <tr>
             <%# Parse date i18n %>
-            <td><%= l task.created_at, format: "%d/%m/%Y" %></td>
-            <td><%= task.scam_type %></td>
+            <td class="text-center align-middle" ><%= l task.created_at, format: "%d/%m/%Y" %></td>
+            <td class="text-center align-middle" ><%= task.scam_type %></td>
             <%# Regex hidden last 3 digits cep %>
-            <td><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
+            <td class="text-center align-middle" ><%= task.cep.to_s.gsub(/(\d{5})(\d{3})/, '\1-***') %></td>
             <% # Check money lost is nill %>
             <%   if task.money_lost.nil? %>
-              <td><%= "Não informado" %></td>
+              <td class="text-center align-middle" ><%= "Não informado" %></td>
             <% else %>
-              <td><%= number_to_currency task.money_lost %></td>
+              <td class="text-center align-middle" ><%= number_to_currency task.money_lost %></td>
             <% end %>
             <% # Check Scammer is empty %>
             <% if task.scammers.pluck(:name, :phone, :email, :website).flatten.delete_if(&:empty?).empty? %>
-              <td>N/A</td>
+              <td class="text-center align-middle" >N/A</td>
             <% else %>
-              <td>
+              <td class="text-center align-middle" >
                 <%= link_to "Ver", task_scammer_path(task_id: task, id:task.scammers.first.id), data: { turbo_frame: "remote_modal" }%>
               </td>
             <% end %>
             <% # If user Show button to redirect to task %>
             <% if admin_signed_in? %>
-              <td>
+              <td class="text-center align-middle" >
                 <% # Link to delete task %>
                 <%= button_to "Deletar", task_path(task), method: :delete, data: { confirm: "Tem certeza?" } %>
               </td>
@@ -55,6 +55,8 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+  <div>
     <% # Paginate %>
     <div class="container">
       <div class="row">
