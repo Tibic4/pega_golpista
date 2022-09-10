@@ -69,6 +69,7 @@
 
   #form-container {
     width: 100%;
+    height: 75%;
   }
 
   .form-inputs {
@@ -87,4 +88,20 @@
   .btn btn-link {
     color: white;
   }
+
+  div.form-actions {
+    box-shadow: none!important;
+  }
+}
+
+@media (max-width: 475px) {
+
+  input.btn.btn-danger {
+    margin-top: 14px;
+  }
+
+  div.btn.btn-link {
+    padding-right: 0;
+  }
+
 }

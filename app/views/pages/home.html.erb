@@ -1,17 +1,14 @@
 <%# navbar da home começa aqui %>
-
 <nav class="navbar navbar-expand-sm sticky-top"
      data-controller="navbar"
      data-action="scroll@window->navbar#updateNavbar"
->
-  <div class="container justify-content-center">
-    <a class="navbar-brand" href="/">
+  >
+  <div class="container d-flex justify-content-center">
+    <a class="navbar-brand d-flex justify-content-center" href="/">
       <%= image_tag "logo.svg", class: "logo" %>
     </a>
   </div>
 </nav>
-
-
 <%# banner começa aqui %>
 <div class="banner">
   <div class="container hero">
@@ -21,13 +18,13 @@
         <h1>Ajude-nos a avisar outras pessoas!</h1>
         <p>O PegaGolpista é o site Nº 1 em <strong>rastreamento</strong>, <strong>denúncias</strong> e <strong>informações</strong> sobre os mais diferentes tipos de golpes.</p>
         <p class="p-xl">Caso queira fazer uma <strong>denúncia</strong> ou ver as denúncias publicadas, poderá encontrar o nosso formulário e as denúncias clicando nos botões abaixo.</p>
-      <%# </button> %>
+        <%# </button> %>
       </div>
     </div>
     <div class="container buttons">
       <div class="row d-flex justify-content-center">
-      <a href="tasks/new" class="btn-denunciar">DENUNCIAR</a>
-      <a href="tasks" class="btn-lista">VER DENÚNCIAS</a>
+        <a href="tasks/new" class="btn-denunciar">DENUNCIAR</a>
+        <a href="tasks" class="btn-lista">VER DENÚNCIAS</a>
       </div>
     </div>
   </div>

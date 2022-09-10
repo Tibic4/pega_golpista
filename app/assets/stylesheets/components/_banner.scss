@@ -298,4 +298,58 @@
   .container.container.info p {
     font-size: 2.5vh;
   }
+
+  div.banner {
+    height: 90vh;
+  }
+}
+
+@media (max-width: 445px) {
+  .banner {
+    height: 80vh;
+  }
+
+  .container.hero {
+    width: 100%;
+    height: 75vh !important;
+    text-align: center;
+  }
+
+  .container.info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container.buttons {
+    width: 100%;
+  }
+
+  .btn-denunciar {
+    margin-top: 3.5rem;
+  }
+
+  .btn-lista {
+    margin-top: 2.5rem;
+  }
+
+  .mask {
+    padding: 40px;
+    height: 50% !important;
+  }
+
+  .p-xl {
+    display: none;
+  }
+
+  .container.container.info h1 {
+    font-size: 3vh;
+  }
+
+  .container.container.info p {
+    font-size: 2vh;
+  }
+
+  div.banner {
+    height: 90vh;
+  }
 }

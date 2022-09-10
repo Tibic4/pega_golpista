@@ -10,7 +10,7 @@
           <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-flex"  do %>
           </li>
           <li>
-            <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-select", id: "advanced-search-input"%>
+            <%= select_tag :search, options_for_select(Task::SCAM_TYPE_FOR_SEARCH, params[:search]), class: "form-select", id: "advanced-search-input"%>
           </li>
           <li>
             <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>

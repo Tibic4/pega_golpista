@@ -105,6 +105,7 @@
   }
 
   .logo {
+    width: 80%;
     justify-content: flex-start;
   }
 
@@ -182,6 +183,113 @@
   button.navbar-toggler {
    background-color: white;
    color: #ff1616;
+  }
+
+}
+
+@media (max-width: 385px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(
+      180deg,
+      rgba(1, 42, 74, 1) 0%,
+      rgba(1, 42, 74, 1) 40%,
+      rgba(1, 42, 74, 0.8) 100%
+    );
+    opacity: 0.95;
+    height: 12vh;
+  }
+
+  .container.nav {
+    width: 100vw;
+    // border: 1px solid;
+    // color: red;
+  }
+
+  .logo {
+    padding-left: 20px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .menu {
+    display: contents;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-link {
+    font-family: "Nunito", sans-serif;
+    font: size 10vw;
+    font-weight: bold;
+    background:white;
+    color: #012a4a;
+    padding: 10px;
+    //hover
+    &:hover {
+      background: #012a4a;
+      color: white!important;
+    }
+  }
+
+  .nav-item {
+    margin-left: 20px;
+  }
+
+  .nav-item a {
+    color: #012a4a;
+  }
+  .navbar-fixed {
+    background: linear-gradient(
+      180deg,
+      rgba(1, 42, 74, 1) 0%,
+      rgba(1, 42, 74, 1) 40%,
+      rgba(1, 42, 74, 0.8) 100%
+    );
+    align-items: center;
+    transition: linear;
+    transition-duration: 350ms;
+  }
+
+  .nav-link a {
+    color: #012a4a;
+  }
+
+  .navbar-fixed a {
+    color: white;
+  }
+
+  .denunciar:hover {
+    color: rgb(175, 175, 175);
+  }
+
+  .ver:hover {
+    color: rgb(175, 175, 175);
+  }
+
+  .prevencao:hover {
+    color: rgb(175, 175, 175);
+  }
+
+  .sobre:hover {
+    color: rgb(175, 175, 175);
+  }
+
+  #nav-a {
+    width: 6.25rem;
+  }
+
+  #nav-b {
+    width: 10rem;
+  }
+
+  button.navbar-toggler {
+   background-color: white;
+   color: #ff1616;
+  }
+  a.navbar-brand {
+    width: 65%;
   }
 
 }

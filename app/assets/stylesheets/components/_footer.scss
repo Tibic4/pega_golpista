@@ -63,11 +63,23 @@
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
-    height: 15%;
-    padding: 20px 0px;
+    padding: 10px 0px;
+    height: 13%;
   }
 
   .footer-links {
-    margin-bottom: 20px;
+    display: none;
   }
+}
+
+@media (max-width: 445px) {
+  .footer {
+    flex-direction: column;
+    padding: 10px 0px;
+    height: 13%;
+  }
+  .footer h3{
+    font-size: 1rem;
+  }
+
 }

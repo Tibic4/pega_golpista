@@ -1,8 +1,21 @@
 .table {
-  width: 100%;
-  // margin-top: 40px;
+  max-width: 100%!important;
 }
 
 .borda{
   border: 1px solid blue
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    font-size: 1rem;
+
+    li:last-child {
+      display: none;
+    }
+
+    li:nth-last-child(2) {
+      display: none;
+    }
+  }
 }
