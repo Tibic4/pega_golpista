@@ -1,6 +1,6 @@
 <% if @tasks.empty? %>
   <% # Align the text to the center %>
-  <div class="text-center m-5">
+  <div class="text-center">
     <h3 style="color: red">Nenhuma denúncia encontrada</h3>
     <h4>Por favor refaça sua busca</h4>
     <% #path to go back indexex %>
@@ -9,14 +9,14 @@
   <div style="height: 30vh"></div>
 <% else %>
   <div>
-    <table class="table mt-5">
+    <table class="table">
       <thead class="bg-primary text-white">
         <tr>
-          <th scope="col">Data</th>
+          <th scope="col" class="data">Data</th>
           <th scope="col">Tipo de Golpe</th>
-          <th scope="col">CEP</th>
+          <th scope="col" class="cep">CEP</th>
           <th scope="col">Dinheiro Perdido</th>
-          <th scope="col">Detalhes</th>
+          <th scope="col" class="detalhes">Detalhes</th>
           <% if admin_signed_in? %>
             <th scope="col">Deletar</th>
           <% end %>
