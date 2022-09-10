@@ -35,6 +35,32 @@
 .btn btn-link {
   color: white;
 }
+@media (max-width: 912px) {
+  .container {
+    width: 100%;
+  }
+
+  #form-container {
+    width: 100%;
+  }
+
+  .form-inputs {
+    text-align: center;
+    color: white;
+  }
+
+  .form-label date required {
+    display: none;
+  }
+
+  .form-data {
+    display: none;
+  }
+
+  .btn btn-link {
+    color: white;
+  }
+}
 
 @media (max-width: 768px) {
   .container {
