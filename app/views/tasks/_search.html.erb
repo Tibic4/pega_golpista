@@ -19,7 +19,8 @@
             <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
           </li>
           <li class="button-icon d-flex justify-content-between">
-            <%= button_tag(type: "submit", class: "btn btn-primary", data: { action: "submit->tasks#update" }) do %>
+            <%= button_tag(type: "submit", class: "btn btn-primary", data: {
+              action: "submit->tasks#update" }) do %>
               <i class="fa fa-search"></i>
             <% end %>
             <%= link_to tasks_path, class: "btn btn-secondary" do %>
