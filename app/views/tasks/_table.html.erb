@@ -8,7 +8,7 @@
   </div>
   <div style="height: 30vh"></div>
 <% else %>
-  <div>
+  <div class="table-responsive">
     <table class="table mt-5">
       <thead class="bg-primary text-white">
         <tr>
@@ -60,6 +60,14 @@
       <div class="row">
         <div class="col-12">
           <div class="paginate d-flex justify-content-center" style="margin-top: 5%">
+            <div class="paginate-mobile">
+              <% if @tasks.current_page > 1 %>
+                <%= link_to "Anterior", tasks_path(page: @tasks.current_page - 1), class: "btn btn-primary mr-1" %>
+                <%= link_to "Próxima", tasks_path(page: @tasks.current_page + 1), class: "btn btn-primary mr-1" %>
+              <% elsif @tasks.current_page > 0 %>
+                <%= link_to "Próxima", tasks_path(page: @tasks.current_page + 1), class: "btn btn-primary mr-1" %>
+              <% end %>
+            </div>
             <%= paginate @tasks, theme: 'bootstrap-5' %>
           </div>
         </div>
