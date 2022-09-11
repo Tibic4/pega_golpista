@@ -82,4 +82,13 @@
     font-size: 1rem;
   }
 
+  ul.list-inline {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+
+
 }

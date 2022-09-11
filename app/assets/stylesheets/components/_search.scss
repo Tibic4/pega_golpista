@@ -8,7 +8,25 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
-@media (min-width: 769px) {
+input#date.textbox-n {
+  font-size: 1rem;
+  height: 3rem;
+  width: 100%;
+  padding: 6px 12px;
+  border-width: 1px;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-color: rgb(206, 212, 218);
+  background-color: rgb(244, 244, 244);
+}
+
+input#zip.form-control {
+  // Add text placeholder
+  &::placeholder {
+    color: black;
+  }
+}
+@media (max-width: 990px) {
   div.dropdown-search-mobile {
     display: none;
   }
@@ -16,10 +34,43 @@
   table.table {
     margin-top: 1.5rem;
   }
+
+  input#date.textbox-n {
+    font-size: 1rem;
+    height: 3rem;
+    width: 100%;
+    padding: 6px 12px;
+    border-width: 1px;
+    border-top: none;
+    border-left: 1px solid #ccc;
+    border-color: rgb(206, 212, 218);
+    background-color: rgb(244, 244, 244);
+  }
+
+  input#zip.form-control {
+    // Add text placeholder
+    &::placeholder {
+      color: black;
+    }
+  }
+
+  button.btn.btn-primary.search {
+    font-size: 1.5rem;
+    width: 45%;
+    margin-top: 10px;
+  }
+
+  a.btn.btn-secondary.reset {
+    font-size: 1.5rem;
+    width: 45%;
+    margin-top: 10px;
+    margin-left: 9%;
+  }
 }
+
+
 @media (max-width: 768px) {
   // Display the search form collapsed on mobile
-
 
   #dropdownMenuButton1 {
     width: 100%;
@@ -33,7 +84,6 @@
   }
   .button-icon {
     padding: 10px;
-
   }
 
   ul li i.fa.fa-search {
@@ -51,8 +101,11 @@
     font-size: 1.5rem;
   }
 
-  input#query.form-control {
+  input#date.textbox-n {
     font-size: 1.5rem;
+    height: 3rem;
+    width: 100%;
+    padding: 12px;
   }
 
   table.table {
@@ -63,7 +116,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
 
   button.btn.btn-primary.search {
@@ -77,15 +129,13 @@
     font-size: 1.5rem;
     width: 100%;
     margin-bottom: 10px;
+    margin-left: 0;
   }
 
   input#zip.form-control {
     // Add text placeholder
     &::placeholder {
-      color: black
+      color: black;
     }
-
   }
-
-
 }

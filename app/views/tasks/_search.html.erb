@@ -1,9 +1,9 @@
 <div class="container search">
   <div class="search-form">
     <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-md-block d-lg-flex"  do %>
-      <%= select_tag :search, options_for_select(Task::SCAM_TYPE_FOR_SEARCH, params[:search]), class: "form-select", id: "advanced-search-input"%>
-      <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep..." %>
-      <%= date_field_tag :query, params[:query],class: "form-control"%>
+      <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-select", id: "advanced-search-input"%>
+      <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
+      <%= date_field_tag :query, params[:query],class: "textbox-n",placeholder: "Date",onfocus: "(this.type='date')", id: "date", type: "text" %>
       <%= button_tag(type: "submit", class: "btn btn-primary search", data: {
         action: "submit->tasks#update",
       }) do %>
