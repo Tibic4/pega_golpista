@@ -8,6 +8,11 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
+
+select#advanced-search-input.form-select {
+  color: #666666;
+}
+
 input#date.textbox-n {
   font-size: 1rem;
   height: 3rem;
@@ -20,12 +25,22 @@ input#date.textbox-n {
   background-color: rgb(244, 244, 244);
 }
 
-input#zip.form-control {
-  // Add text placeholder
-  &::placeholder {
-    color: black;
-  }
+input[type="date"]::before {
+  color: #999999;
+  content: attr(placeholder);
 }
+input[type="date"] {
+  color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+  color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  content: "" !important;
+}
+
 @media (max-width: 990px) {
   div.dropdown-search-mobile {
     display: none;
@@ -47,13 +62,6 @@ input#zip.form-control {
     background-color: rgb(244, 244, 244);
   }
 
-  input#zip.form-control {
-    // Add text placeholder
-    &::placeholder {
-      color: black;
-    }
-  }
-
   button.btn.btn-primary.search {
     font-size: 1.5rem;
     width: 45%;
@@ -67,7 +75,6 @@ input#zip.form-control {
     margin-left: 9%;
   }
 }
-
 
 @media (max-width: 768px) {
   // Display the search form collapsed on mobile
@@ -132,10 +139,19 @@ input#zip.form-control {
     margin-left: 0;
   }
 
-  input#zip.form-control {
-    // Add text placeholder
-    &::placeholder {
-      color: black;
-    }
+  input[type="date"]::before {
+    color: #999999;
+    content: attr(placeholder);
+  }
+  input[type="date"] {
+    color: #ffffff;
+  }
+  input[type="date"]:focus,
+  input[type="date"]:valid {
+    color: #666666;
+  }
+  input[type="date"]:focus::before,
+  input[type="date"]:valid::before {
+    content: "" !important;
   }
 }
