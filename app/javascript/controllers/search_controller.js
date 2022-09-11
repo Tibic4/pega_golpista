@@ -1,12 +1,13 @@
 import { Controller } from "@hotwired/stimulus";
 
-
-
 export default class extends Controller {
-  initialize() {
-  }
+  initialize() {}
 
   submit(_event) {
-    this.element.requestSubmit();
+    if (window.innerWidth < 768) {
+      this.element.requestSubmit();
+    } else {
+    }
+    return;
   }
 }

@@ -1,48 +1,15 @@
 <div class="container search">
-  <%# <% Dropdown mobile search %>
-  <div class="container mobile-search">
-    <div class="dropdown dropdown-search-mobile">
-      <button class="btn btn-secondary dropdown-toggle btn-search" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa fa-search"></i>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li>
-          <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-flex"  do %>
-          </li>
-          <li>
-            <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-select", id: "advanced-search-input"%>
-          </li>
-          <li>
-            <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
-          </li>
-          <li>
-            <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
-          </li>
-          <li class="button-icon d-flex justify-content-between">
-            <%= button_tag(type: "submit", class: "btn btn-primary", data: {
-              action: "submit->tasks#update" }) do %>
-              <i class="fa fa-search"></i>
-            <% end %>
-            <%= link_to tasks_path, class: "btn btn-secondary" do %>
-              <i class="fa fa-times"></i>
-            <% end %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <%# Normal Search  %>
   <div class="search-form">
-    <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search"}, class: "d-flex"  do %>
-      <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-select", id: "advanced-search-input"%>
+    <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-md-block d-lg-flex"  do %>
+      <%= select_tag :search, options_for_select(Task::SCAM_TYPE_FOR_SEARCH, params[:search]), class: "form-select", id: "advanced-search-input"%>
       <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
       <%= date_field_tag :query, params[:query],class: "form-control",placeholder: "Pesquise por data" %>
-      <%= button_tag(type: "submit", class: "btn btn-primary", data: {
+      <%= button_tag(type: "submit", class: "btn btn-primary search", data: {
         action: "submit->tasks#update",
       }) do %>
         <i class="fa fa-search"></i>
       <% end %>
-      <%= link_to tasks_path, class: "btn btn-secondary" do %>
+      <%= link_to tasks_path, class: "btn btn-secondary reset" do %>
         <i class="fa fa-times"></i>
       <% end %>
     <% end %>

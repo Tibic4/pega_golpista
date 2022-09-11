@@ -19,9 +19,6 @@
 }
 @media (max-width: 768px) {
   // Display the search form collapsed on mobile
-  .search-form {
-    display: none;
-  }
 
 
   #dropdownMenuButton1 {
@@ -55,11 +52,32 @@
   }
 
   input#query.form-control {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   table.table {
     margin-top: 1.5rem;
   }
+
+  div.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  button.btn.btn-primary.search {
+    font-size: 1.5rem;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  a.btn.btn-secondary.reset {
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
 
 }
