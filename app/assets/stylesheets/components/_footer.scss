@@ -87,6 +87,10 @@ div.footer-copyright h3 {
     font-size: 0.7rem;
   }
 
+  .footer-copyright h3 {
+    font-size: 1rem!important;
+  }
+
   ul.list-inline {
     display: flex;
     justify-content: space-evenly;
@@ -94,6 +98,4 @@ div.footer-copyright h3 {
     margin-top: 10px;
     font-size: 0.8rem;
   }
-
-
 }
