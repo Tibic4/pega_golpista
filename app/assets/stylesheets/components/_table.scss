@@ -6,6 +6,24 @@
 .borda {
   border: 1px solid blue;
 }
+
+// Style h3 denuncias
+h3.denuncias {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #012a4a;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2.display-sm {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #012a4a;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 @media (min-width: 500px) {
   .paginate-mobile {
     display: none;
@@ -17,8 +35,9 @@
     // Show first and last page
     display: none;
   }
-
-  span.registrada-sm {
+}
+@media (max-width: 999px) {
+  .display-sm {
     display: none;
   }
 }
