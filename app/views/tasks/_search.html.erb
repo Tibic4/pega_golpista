@@ -1,8 +1,9 @@
 <div class="container search">
   <div class="search-form">
+    <h2 class="search-h2-mobile">PROCURAR</h2>
     <%= form_tag tasks_path, method: :get, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" }, class: "d-md-block d-lg-flex"  do %>
       <%= select_tag :search, options_for_select(Task::SCAM_TYPE, params[:search]), class: "form-select", id: "advanced-search-input"%>
-      <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "Pesquise por cep" %>
+      <%= text_field_tag :zip, params[:zip],class: "form-control",placeholder: "CEP" %>
       <%# If width mobile change date_filed %>
       <% if device == "mobile" || device == "tablet"%>
         <%= text_field_tag :query, params[:query],class: "form-control",placeholder: Time.now.strftime("%d/%m/%Y") %>

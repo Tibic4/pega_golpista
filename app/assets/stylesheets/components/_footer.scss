@@ -12,6 +12,12 @@
   height: 8.5rem;
 }
 
+div.footer-copyright h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -21,7 +27,7 @@
   color: #b8b8b8;
   // opacity: 0.15;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   padding: 0px 10px;
 }
 
@@ -78,7 +84,7 @@
     height: 7rem;
   }
   .footer h3{
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
 
   ul.list-inline {
